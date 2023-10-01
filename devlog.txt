@@ -4,3 +4,9 @@
 01 October 2023
 -Got "Cracking Codes with Python" book to help suss out how to handle cracking substitution cipher decoding
     -Created new branch "ReverseCipher" off of main branch.
+        -Created "Exercises" directory for storing exercises from Cracking Codes with Python
+            -Created new file "reverseCipher.py"
+                -Few lines of code that take input & provide a "mirrored"("derorrim") version of the string.
+        -Added reverseCipher function to main.py
+        -Added sarcasticCipher function to main.py
+            -Takes inputted string & provides a "sarcastic"("sArCaStIc") output of it.
