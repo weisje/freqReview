@@ -10,3 +10,4 @@
         -Added reverseCipher function to main.py
         -Added sarcasticCipher function to main.py
             -Takes inputted string & provides a "sarcastic"("sArCaStIc") output of it.
+    -Merged ReverseCipher branch into main branch.
