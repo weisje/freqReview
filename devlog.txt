@@ -1,2 +1,6 @@
 30 September 2023
 -Generated new project for analyzing simple substitution ciphers
+
+01 October 2023
+-Got "Cracking Codes with Python" book to help suss out how to handle cracking substitution cipher decoding
+    -Created new branch "ReverseCipher" off of main branch.
