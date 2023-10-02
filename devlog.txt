@@ -16,3 +16,5 @@
 -Generated CaesarCipher branch from main branch
     -Created Exercises > caesarCipher.py
         -Exercise for creating a basic caesar cipher where letters are shifted a defined number for encryption/decryption
+    -Added caesarCipher() function to main.py
+-Merged caesarCipher branch into main branch
