@@ -18,3 +18,8 @@
         -Exercise for creating a basic caesar cipher where letters are shifted a defined number for encryption/decryption
     -Added caesarCipher() function to main.py
 -Merged caesarCipher branch into main branch
+
+03 October 2023
+-Created CaesarHacker branch off of main branch
+    -Generated Exercises > caesarHacker.py file
+        -Exercise to bruteforce caesar ciphers by iterating through every possible key value
