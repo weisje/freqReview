@@ -23,3 +23,4 @@
 -Created CaesarHacker branch off of main branch
     -Generated Exercises > caesarHacker.py file
         -Exercise to bruteforce caesar ciphers by iterating through every possible key value
+    -Added caesarHacker() to main.py as a function

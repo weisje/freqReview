@@ -2,6 +2,40 @@
 import sys
 
 
+def caesarHacker(message, SYMBOLS="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?."):
+    """
+    Function for solving caesar ciphers through bruteforce by iterating through every possible key to solve the message.
+    :param message: Variable of the message to be decrypted
+    :type message: str
+    :param SYMBOLS: Variable of all the possible encryption characters available for the decryption attempt
+    :type SYMBOLS: str
+    :return: None
+    """
+    message = str(message)
+    SYMBOLS = str(SYMBOLS)
+
+    for key in range(len(SYMBOLS)):
+        translated = ""
+        for symbol in message:
+            if symbol in SYMBOLS: # If the symbol is able to be decrypted
+                symbolIndex = SYMBOLS.find(symbol)
+                translatedIndex = symbolIndex - key
+
+                if translatedIndex < 0: # Handle wraparound to bring it to the end if it would cause an underflow error.
+                    translatedIndex = translatedIndex + len(SYMBOLS)
+                translated = translated + SYMBOLS[translatedIndex]
+
+            else: # If the symbol cannot be decrypted just append it directly
+                translated = translated + symbol
+
+        if key < 10:
+            print(f"Key 0{key}: {translated}")
+        else:
+            print(f"Key {key}: {translated}")
+
+
+
+
 def caesarCipher(message, mode='encrypt', key=13):
     """
     Function for shifting letters of provided message a specified amount(key) in order to encrypt/decrypt it. i.e. Key 1 mode 0 turns "abc" > "bcd"
@@ -78,8 +112,7 @@ def sarcasmCipher(sourceText):
     return translatedMessage
 
 def main():
-    message = input("Source Message: ")
-    print(caesarCipher(message))
+    caesarHacker("guv6Jz!J6rp5r7Jzr66ntrM")
 
 
 if __name__ == '__main__':

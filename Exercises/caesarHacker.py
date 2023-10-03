@@ -1,7 +1,7 @@
 # Caesar Cipher Hacker
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
-message = "cba heddhgfedb onkm lkjii iqkp"
+message = "guv6Jz!J6rp5r7Jzr66ntrM"
 SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?." # Every symbol that is allowed to be encrypted
 
 # Loop through every possible key
