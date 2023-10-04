@@ -25,3 +25,10 @@
         -Exercise to bruteforce caesar ciphers by iterating through every possible key value
     -Added caesarHacker() to main.py as a function
 -merged CaesarHacker branch into main branch
+
+04 October 2023
+-Created TranspositionEncrypt branch off of main branch
+    -Generated Exercises > transpositionEncrypt.py file
+        -Established main() function
+        -Established encryptMessage() function
+            -Function that encrypts the message via a transposition cipher
