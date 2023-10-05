@@ -2,6 +2,28 @@
 import sys
 
 
+def transpositionEncrypt(keyLength, message):
+    """
+    Function for performing a transposition cipher encryption on a provided message
+    :param keyLength: Length of each entry for the transposition cipher to work with
+    :type keyLength: int
+    :param message: Message to be encrypted
+    :type message: str
+    :return: str
+    """
+    key = int(keyLength)
+    message = str(message)
+    cipherText = [''] * key # Generate a number of lists equal to the key value to act as the column holders for the provided message
+
+    for column in range(key): # Loop through for each column by the key value
+        currentIndex = column # Set initial index value to match that of the current working column
+        while currentIndex < len(message): # Work until the working index is less than the length of the current message.
+            cipherText[column] += message[currentIndex] # Add the letter at the current working index to ciphertext list for the current working column
+            currentIndex += key # Increase the index by the value of the key. This is the main mechanical worker for this transposition cipher.
+
+    return ''.join(cipherText) # Return the cipher as a single string.
+
+
 def caesarHacker(message, SYMBOLS="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?."):
     """
     Function for solving caesar ciphers through bruteforce by iterating through every possible key to solve the message.
@@ -112,7 +134,7 @@ def sarcasmCipher(sourceText):
     return translatedMessage
 
 def main():
-    caesarHacker("guv6Jz!J6rp5r7Jzr66ntrM")
+    print(transpositionEncrypt(4, "Your mother was a hoe.") + '|')
 
 
 if __name__ == '__main__':

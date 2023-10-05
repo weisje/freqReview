@@ -32,3 +32,9 @@
         -Established main() function
         -Established encryptMessage() function
             -Function that encrypts the message via a transposition cipher
+
+05 October 2023
+-Worked on transpositionEncrypt.py
+    -Fleshed out encryptMessage() function to work through transposition process based on the provided key length
+    -Confirmed it working properly
+-Added transpositionEncrypt() function to main.py
