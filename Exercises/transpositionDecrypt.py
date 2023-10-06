@@ -20,8 +20,13 @@ def decryptMessage(key, message): # TODO
     return ''.join(plaintext)
 
 
-def main(): # TODO
-    pass
+def main():
+    message = "Cenoonommstmme oo snnio. s s c" # Message to be decrypted
+    key = 8 # Keylength to be passed to the transposition cipher decrypter
+
+    plaintext = decryptMessage(key, message)
+    print(f"{plaintext}|") # Adds pipe ('|') to the end of the message in case there are purposeful whitespaces at the end of the decrypted message.
+    pyperclip.copy(plaintext)
 
 
 if __name__ == '__main__':

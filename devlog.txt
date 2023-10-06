@@ -46,3 +46,6 @@
         -Created holder for main() function
         -Put in framing for decryptMessage() function
             -Defined function, variables, & return value.
+        -Added contents of main() function to call the decryptMessage() function, print results on screen, & copy contents to the clipboard.
+            -Removed main() function's TODO
+            -Added context comments to portions of main() function.
