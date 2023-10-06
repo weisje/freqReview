@@ -5,7 +5,7 @@ import math
 import pyperclip
 
 
-def decryptMessage(key, message): # TODO
+def decryptMessage(key, message):
     """
     Function for decrypting transposition cipher messages("tsinp ssrpt hmaaoiceegnsoirse") when a keylength is provided
     :param key: Value that defines the height of each column for decrypting the message
@@ -14,8 +14,23 @@ def decryptMessage(key, message): # TODO
     :type message: str
     :return: str
     """
-    numOfColumns = int(math.ceil(len(message) / float(key)))
-    plaintext = [''] * numOfColumns
+    numOfColumns = int(math.ceil(len(message) / float(key))) # Number of "Columns" in the transposition grid.
+    numOfRows = key # Number of "Rows" in the transposition grid
+    numOfShadedBoxes = (numOfColumns * numOfRows) - len(message) # Number of shaded cells at the end of the message that were used as padding.
+
+    plaintext = [''] * numOfColumns # Create a number of empty list equal to the number of columns to place characters in
+
+    # Variables to act as a pointer to where the next character should go.
+    column = 0
+    row = 0
+
+    for symbol in message:
+        plaintext[column] += symbol # Add symbol to the current column's list
+        column += 1 # Move to the next column
+
+        if (column == numOfColumns) or (column == numOfColumns - 1 and row >= numOfRows - numOfShadedBoxes): # If to the end of a row or on the last column & hit a shaded box reset column count & add one to the row count to "move down".
+            column = 0
+            row += 1
 
     return ''.join(plaintext)
 
