@@ -57,3 +57,4 @@
         -Added math for defining the number of columns, rows, & shaded boxes for the decryption function.
         -Provided logic for decrypting provided message.
         -Tested functionality & confirmed that it is working.
+-Merged TranspositionDecrypt branch into main branch
