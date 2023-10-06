@@ -39,3 +39,10 @@
     -Confirmed it working properly
 -Added transpositionEncrypt() function to main.py
 -Merged TranspositionEncrypt branch into main branch
+
+06 October 2023
+-Generated TranspositionDecrypt branch off of main branch
+    -Added Exercises > transpositionDecrypt.py
+        -Created holder for main() function
+        -Put in framing for decryptMessage() function
+            -Defined function, variables, & return value.
