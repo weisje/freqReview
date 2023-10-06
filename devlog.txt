@@ -54,3 +54,6 @@
             -Added context comments
     -Added transpositionDecrypt() function to main.py
         -Framed function with initialization comments for required variables.
+        -Added math for defining the number of columns, rows, & shaded boxes for the decryption function.
+        -Provided logic for decrypting provided message.
+        -Tested functionality & confirmed that it is working.

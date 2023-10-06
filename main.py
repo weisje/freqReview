@@ -14,8 +14,23 @@ def transpositionDecrypt(keyLength, message):
     """
     key = int(keyLength)
     message = str(message)
-    numOfColumns = int(math.ceil(len(message) / float(key)))
-    plaintext = [''] * numOfColumns
+    numOfColumns = int(math.ceil(len(message) / float(key))) # Number of "Columns" in the transposition grid.
+    numOfRows = key # Number of "Rows" in the transposition grid.
+    numOfShadedBoxes = (numOfColumns * numOfRows) - len(message)  # Number of shaded cells at the end of the message that were used as padding.
+
+    plaintext = [''] * numOfColumns # Generate a number of empty lists equal to the number of columns to place characters while decrypting
+
+    # Variables that act as pointers for placing characters from the message while decrypting the message
+    column = 0
+    row = 0
+
+    for symbol in message:
+        plaintext[column] += symbol
+        column += 1
+
+        if (column == numOfColumns) or (column == numOfColumns - 1 and row >= numOfRows - numOfShadedBoxes): # If to the end of a row or on the last column & hit a shaded box reset column count & add one to the row count to "move down".
+            column = 0
+            row += 1
 
     return ''.join(plaintext)
 
@@ -152,7 +167,11 @@ def sarcasmCipher(sourceText):
     return translatedMessage
 
 def main():
-    print(transpositionEncrypt(8, "Common sense is not so common.") + '|')
+    keyLength = 8
+    originalMessage = "Common sense is not so common."
+    encryptedMessage = transpositionEncrypt(keyLength, originalMessage)
+    decryptedMessage = transpositionDecrypt(keyLength, encryptedMessage)
+    print(f'Original Message: \'{originalMessage}\'\nEncrypted Message: \'{encryptedMessage}\'\nDecrypted Message: \'{decryptedMessage}\'\n')
 
 
 if __name__ == '__main__':
