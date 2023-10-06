@@ -1,5 +1,23 @@
 # Portions of this code were sourced & inspired by "Cracking Codes with Python" https://www.nostarch.com/crackingcodes (BSD Licensed)
+import math
 import sys
+
+
+def transpositionDecrypt(keyLength, message):
+    """
+    Function for decrypting transposition cipher messages("tsinp ssrpt hmaaoiceegnsoirse") when a keylength is provided
+    :param keyLength: Value that defines the height of each column for decrypting the message
+    :type keyLength: int
+    :param message: Variable of the encrypted message to be decrypted
+    :type message: str
+    :return: str
+    """
+    key = int(keyLength)
+    message = str(message)
+    numOfColumns = int(math.ceil(len(message) / float(key)))
+    plaintext = [''] * numOfColumns
+
+    return ''.join(plaintext)
 
 
 def transpositionEncrypt(keyLength, message):
@@ -134,7 +152,7 @@ def sarcasmCipher(sourceText):
     return translatedMessage
 
 def main():
-    print(transpositionEncrypt(4, "Your mother was a hoe.") + '|')
+    print(transpositionEncrypt(8, "Common sense is not so common.") + '|')
 
 
 if __name__ == '__main__':

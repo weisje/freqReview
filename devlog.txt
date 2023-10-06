@@ -52,3 +52,5 @@
         -Added body of the decryptMessage() function.
             -Put in math to instruct the program on how to read in the encrypted message & sort it out based on the provided key length.
             -Added context comments
+    -Added transpositionDecrypt() function to main.py
+        -Framed function with initialization comments for required variables.
