@@ -63,3 +63,4 @@
 -Generated TranspositionTest branch off of main branch
     -Created Exercises > transpositionTest.py
         -Added main() function & main running stipulation
+        -Added testing capability for the transposition cipher.
