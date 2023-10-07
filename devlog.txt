@@ -58,3 +58,8 @@
         -Provided logic for decrypting provided message.
         -Tested functionality & confirmed that it is working.
 -Merged TranspositionDecrypt branch into main branch
+
+07 October 2023
+-Generated TranspositionTest branch off of main branch
+    -Created Exercises > transpositionTest.py
+        -Added main() function & main running stipulation
