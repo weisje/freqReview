@@ -1,9 +1,29 @@
 # Portions of this code were sourced & inspired by "Cracking Codes with Python" https://www.nostarch.com/crackingcodes (BSD Licensed)
 import math
+import random
+import string
 import sys
 
 
-def transpositionDecrypt(keyLength, message):
+def transpositionTest(randomSeed=42, testCases=20, messageBody=string.ascii_uppercase, messageDisplayLength=50) -> None:
+    """
+    Function for testing the functional operation of the transpositionEncrypt() & transpositionDecrypt() functions.
+    :param randomSeed: Anchoring variable to base the generation of random characters
+    :type randomSeed: int
+    :param testCases: How many test cases should be run for the current test
+    :type testCases: int
+    :param messageBody: Characters that are allowed in the random character generation
+    :type messageBody: str
+    :param messageDisplayLength:How many characters for teach test case should be displayed when printing them
+    :type messageDisplayLength: int
+    :return: None
+    """
+
+    random.seed(randomSeed) # Set anchor seed for generation of test bodies
+    for i in range(testCases): # Perform a number of tests equal to the testCases variable
+        print(i)
+
+def transpositionDecrypt(keyLength, message) -> str:
     """
     Function for decrypting transposition cipher messages("tsinp ssrpt hmaaoiceegnsoirse") when a keylength is provided
     :param keyLength: Value that defines the height of each column for decrypting the message
@@ -35,7 +55,7 @@ def transpositionDecrypt(keyLength, message):
     return ''.join(plaintext)
 
 
-def transpositionEncrypt(keyLength, message):
+def transpositionEncrypt(keyLength, message) -> str:
     """
     Function for performing a transposition cipher encryption on a provided message
     :param keyLength: Length of each entry for the transposition cipher to work with
@@ -57,7 +77,7 @@ def transpositionEncrypt(keyLength, message):
     return ''.join(cipherText) # Return the cipher as a single string.
 
 
-def caesarHacker(message, SYMBOLS="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?."):
+def caesarHacker(message, SYMBOLS="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.") -> None:
     """
     Function for solving caesar ciphers through bruteforce by iterating through every possible key to solve the message.
     :param message: Variable of the message to be decrypted

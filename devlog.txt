@@ -64,3 +64,7 @@
     -Created Exercises > transpositionTest.py
         -Added main() function & main running stipulation
         -Added testing capability for the transposition cipher.
+    -Added transpositionTest() function to main.py
+        -Added initial values & initial comments
+        -Generated anchor seed for random generation
+        -Put in forloop for the test iterations.
