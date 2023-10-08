@@ -68,3 +68,8 @@
         -Added initial values & initial comments
         -Generated anchor seed for random generation
         -Put in forloop for the test iterations.
+
+08 October 2023
+-Added mechanics for creating a random string of characters to test in transpositionTest() function of main.py
+    -Created means to convert string to list, shuffle the list, & then recombine the shuffled list into a string
+    -Added padding zero if the current test iteration is less than or equal to nine.

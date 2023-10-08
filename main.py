@@ -20,8 +20,20 @@ def transpositionTest(randomSeed=42, testCases=20, messageBody=string.ascii_uppe
     """
 
     random.seed(randomSeed) # Set anchor seed for generation of test bodies
-    for i in range(testCases): # Perform a number of tests equal to the testCases variable
-        print(i)
+    for currentTest in range(testCases): # Perform a number of tests equal to the testCases variable
+        message = messageBody * random.randint(4, 40) # Generate messages with between 4 & 40 iterations of the messageBody contents
+
+        # Convert message contents from str to list, shuffle it up, & turn the shuffled mess back into a str.
+        message = list(message)
+        random.shuffle(message)
+        message = ''.join(message)
+
+        # Print the current test body & add a padding zero if its count is nine or less.
+        if currentTest + 1 <= 9:
+            print(f"Test 0{currentTest + 1}: \"{message[:messageDisplayLength]}...\"")
+        else:
+            print(f"Test {currentTest + 1}: \"{message[:messageDisplayLength]}...\"")
+
 
 def transpositionDecrypt(keyLength, message) -> str:
     """
@@ -186,12 +198,9 @@ def sarcasmCipher(sourceText):
 
     return translatedMessage
 
+
 def main():
-    keyLength = 8
-    originalMessage = "Common sense is not so common."
-    encryptedMessage = transpositionEncrypt(keyLength, originalMessage)
-    decryptedMessage = transpositionDecrypt(keyLength, encryptedMessage)
-    print(f'Original Message: \'{originalMessage}\'\nEncrypted Message: \'{encryptedMessage}\'\nDecrypted Message: \'{decryptedMessage}\'\n')
+    transpositionTest()
 
 
 if __name__ == '__main__':
