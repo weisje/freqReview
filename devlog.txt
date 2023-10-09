@@ -79,3 +79,4 @@
 -... for decrypting the random strings for the transpositionTest() function
 -Created watcher to see if the decryption produced the same thing as the encrypted message.
 -Put final portion of the function to show that the test had passed.
+-Merged TranspositionTest branch with main branch.
