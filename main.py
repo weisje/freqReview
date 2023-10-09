@@ -34,6 +34,16 @@ def transpositionTest(randomSeed=42, testCases=20, messageBody=string.ascii_uppe
         else:
             print(f"Test {currentTest + 1}: \"{message[:messageDisplayLength]}...\"")
 
+        for key in range(1, int(len(message) / 2)): # Perform a number of tests equal to half the total length of the message.
+            encryptedMessage = transpositionEncrypt(key, message)
+            decryptedMessage = transpositionDecrypt(key, encryptedMessage)
+
+            if message != decryptedMessage: # If the decrypt failed & produced something other than the original message
+                print(f"Mismatch with key {key} & message \"{message}\".\nDecrypted as: \"{decryptedMessage}\"")
+                sys.exit()
+
+    print("Transposition cipher test passed.")
+
 
 def transpositionDecrypt(keyLength, message) -> str:
     """

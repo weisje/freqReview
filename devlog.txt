@@ -73,3 +73,9 @@
 -Added mechanics for creating a random string of characters to test in transpositionTest() function of main.py
     -Created means to convert string to list, shuffle the list, & then recombine the shuffled list into a string
     -Added padding zero if the current test iteration is less than or equal to nine.
+
+09 October 2023
+-Added mechanics for encrypting the random strings for the transpositionTest() function
+-... for decrypting the random strings for the transpositionTest() function
+-Created watcher to see if the decryption produced the same thing as the encrypted message.
+-Put final portion of the function to show that the test had passed.
