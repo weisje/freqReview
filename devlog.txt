@@ -85,3 +85,7 @@
 -Created TranspositionFileCipher branch off of main branch
     -Added file in Exercises > transpositionFileCipher.py
         -Added main() function
+        -Imported dependencies both from common Python libraries & ones that were created via this exercise.
+        -Defined the directory path for the files to be worked.
+    -Added Exercises > Resources directory for storing text files to be encrypted
+        -Added txt files to resources for testing transposition file encryption to directory.
