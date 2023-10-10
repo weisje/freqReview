@@ -80,3 +80,8 @@
 -Created watcher to see if the decryption produced the same thing as the encrypted message.
 -Put final portion of the function to show that the test had passed.
 -Merged TranspositionTest branch with main branch.
+
+10 October 2023
+-Created TranspositionFileCipher branch off of main branch
+    -Added file in Exercises > transpositionFileCipher.py
+        -Added main() function

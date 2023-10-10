@@ -131,8 +131,6 @@ def caesarHacker(message, SYMBOLS="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrs
             print(f"Key {key}: {translated}")
 
 
-
-
 def caesarCipher(message, mode='encrypt', key=13):
     """
     Function for shifting letters of provided message a specified amount(key) in order to encrypt/decrypt it. i.e. Key 1 mode 0 turns "abc" > "bcd"
