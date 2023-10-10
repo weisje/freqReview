@@ -87,5 +87,8 @@
         -Added main() function
         -Imported dependencies both from common Python libraries & ones that were created via this exercise.
         -Defined the directory path for the files to be worked.
+        -Defined variables for handling the input file name & output file name after encryption
+        -Added variables for the cryptionKey & "mode" that will allow user to define if they want to encrypt or decrypt a file
+        -Added check for valid mode selection with program exit on failed mode selection
     -Added Exercises > Resources directory for storing text files to be encrypted
         -Added txt files to resources for testing transposition file encryption to directory.
