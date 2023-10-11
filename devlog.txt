@@ -92,3 +92,6 @@
         -Added check for valid mode selection with program exit on failed mode selection
     -Added Exercises > Resources directory for storing text files to be encrypted
         -Added txt files to resources for testing transposition file encryption to directory.
+
+11 October 2023
+-Added check to see if the output file already exists.  If it does it offers the user the ability to exit out before overwriting the existing file.
