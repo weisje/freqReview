@@ -101,3 +101,4 @@
     -Mode check is working
     -Inputfile check is working
     -Outputfile check is working
+-Printed current running mode to console.
