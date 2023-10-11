@@ -20,11 +20,16 @@ def main():
         print(f"\'{cryptMode}\' is not a valid mode for this program.  The available modes are \'encrypt\' or \'decrypt\'.  Quitting...")
         sys.exit()
 
-    if os.path.exists(outputFileName):
+    if not os.path.exists(fullInputFileName): # Check to see if the input file exists or not
+        print(f"The file {fullInputFileName} does not exist.  Quitting...")
+        sys.exit()
+
+    if os.path.exists(outputFileName): # Check to see if the output file already exists
         print(f"This will overwrite the file: {outputFileName}. (C)ontinue or (Q)uit?")
         response = input("> ")
         if not response.lower().startswith("c"):
             sys.exit()
+
 
 if __name__ == '__main__':
     main()

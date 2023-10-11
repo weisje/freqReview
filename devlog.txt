@@ -95,3 +95,4 @@
 
 11 October 2023
 -Added check to see if the output file already exists.  If it does it offers the user the ability to exit out before overwriting the existing file.
+-Added check to see if input file exists before attempting to run the cipher on it.  If it does not exist it informs the user & exits.
