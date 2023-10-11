@@ -21,14 +21,18 @@ def main():
         sys.exit()
 
     if not os.path.exists(fullInputFileName): # Check to see if the input file exists or not
-        print(f"The file {fullInputFileName} does not exist.  Quitting...")
-        sys.exit()
+        sys.exit(f"The file \'{fullInputFileName}\' does not exist.  Quitting...")
 
     if os.path.exists(outputFileName): # Check to see if the output file already exists
-        print(f"This will overwrite the file: {outputFileName}. (C)ontinue or (Q)uit?")
+        print(f"This will overwrite the file: \'{outputFileName}\'. (C)ontinue or (Q)uit?")
         response = input("> ")
         if not response.lower().startswith("c"):
-            sys.exit()
+            sys.exit("Quitting...")
+
+    fileObj = open(fullInputFileName)
+    content = fileObj.read()
+    fileObj.close()
+    print(len(content))
 
 
 if __name__ == '__main__':
