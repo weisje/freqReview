@@ -102,3 +102,8 @@
     -Inputfile check is working
     -Outputfile check is working
 -Printed current running mode to console.
+
+12 October 2023
+-Added execution time measuring section
+-Added script calls for ciphering the provided message based on the cryptMode variable(encrypt on 'encrypt', decrypt on 'decrypt')
+-Opened text file to write results of crypting of file.
