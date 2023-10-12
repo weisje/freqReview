@@ -10,16 +10,27 @@ import transpositionDecrypt, transpositionEncrypt
 def main():
     inputDirectoryName = "Resources"
     inputFileName = "frankenstein"
+    inputQualifier = ""
     inputFileType = ".txt"
+    outputQualifier = ""
     cryptKey = 10  # Key to define how long the rows are for this round of crypting
-    cryptMode = 'encrypt'  # Set to "encrypt" or "decrypt"
+    cryptMode = 'decrypt'  # Set to "encrypt" or "decrypt"
     cryptMode = cryptMode.lower()
-    fullInputFileName = f"{inputDirectoryName}\\{inputFileName}{inputFileType}"
-    outputFileName = f"{inputDirectoryName}\\{inputFileName}.encrypted{inputFileType}"
 
     if cryptMode != 'encrypt' and cryptMode != 'decrypt': # Check to see if user entered a proper mode setting
         print(f"\'{cryptMode}\' is not a valid mode for this program.  The available modes are \'encrypt\' or \'decrypt\'.  Quitting...")
         sys.exit()
+
+    # Add some controllers based on what the user is doing; encrypting or decrypting.  This then knows what to look for as well as adding context to the results filename for the user.
+    if cryptMode == 'encrypt':
+        outputQualifier = ".encrypted"
+    if cryptMode == 'decrypt':
+        inputQualifier = ".encrypted"
+        outputQualifier = ".decrypted"
+
+    # Assigns values to the filenames based on which cryptMode the user has selected
+    fullInputFileName = f"{inputDirectoryName}\\{inputFileName}{inputQualifier}{inputFileType}"
+    outputFileName = f"{inputDirectoryName}\\{inputFileName}{outputQualifier}{inputFileType}"
 
     if not os.path.exists(fullInputFileName): # Check to see if the input file exists or not
         sys.exit(f"The file \'{fullInputFileName}\' does not exist.  Quitting...")

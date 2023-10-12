@@ -109,3 +109,6 @@
 -Opened text file to write results of crypting of file.
 -Added sign off prints to inform user on results & file output name
 -Added instructive comments that may have been missed during development
+-Tested & confirmed MVP is working
+-Added if statements to better streamline the file finding/file name working process
+    -Tested & confirmed it working properly
