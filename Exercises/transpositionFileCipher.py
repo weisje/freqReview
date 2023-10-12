@@ -27,7 +27,7 @@ def main():
     if os.path.exists(outputFileName): # Check to see if the output file already exists
         print(f"This will overwrite the file: \'{outputFileName}\'. (C)ontinue or (Q)uit?")
         response = input("> ")
-        if not response.lower().startswith("c"):
+        if not response.lower().startswith("c"): # Assumes the user doesn't want to move forward if they select anything but the 'continue'
             sys.exit("Quitting...")
 
     # Read input file into the program
@@ -37,6 +37,7 @@ def main():
 
     print(f"{cryptMode.title()}ing...")
 
+    # Begin the crypting process
     startTime = time.time()
     if cryptMode == 'encrypt':
         translated = transpositionEncrypt.encryptMessage(cryptKey, content)
@@ -49,6 +50,8 @@ def main():
     outputFileObj.write(translated)
     outputFileObj.close()
 
+    print(f"Done {cryptMode}ing {fullInputFileName} ({len(content)} characters).")
+    print(f"{cryptMode.title()}ed file is \'{outputFileName}\'.")
 
 
 if __name__ == '__main__':

@@ -107,3 +107,5 @@
 -Added execution time measuring section
 -Added script calls for ciphering the provided message based on the cryptMode variable(encrypt on 'encrypt', decrypt on 'decrypt')
 -Opened text file to write results of crypting of file.
+-Added sign off prints to inform user on results & file output name
+-Added instructive comments that may have been missed during development
