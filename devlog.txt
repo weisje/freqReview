@@ -123,3 +123,8 @@
 -Put in constructors for input & output file types provided by the user
 -Added check to see if the input file exists & exit if it does not
 -Added check to see if the output file exists & ask the user to confirm before overwriting the file
+-Read contents of input file into memory
+-Added print function to inform user/keep them in the loop
+-Began ciphering section with a try/except block.
+    -Block tries to either encrypt or decrypt the provided content.  If it is met with an exception it reports said exception & exits the program
+-Added a little timer cap to the cipher section to see how long it takes to run

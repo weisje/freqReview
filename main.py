@@ -50,6 +50,26 @@ def transpositionFileCipher(inputDirectoryName, inputFileName, inputFileType, in
         if not response.lower().startswith('c'): # If the file does exist & the user selects anything but 'c', exit the program.
             sys.exit('Quitting...')
 
+    # Read the input file into the function
+    with open(fullInputFileName) as fileObj:
+        content = fileObj.read()
+        fileObj.close()
+
+    print(f"{cipherMode.title()}ing \'{inputFileName}{inputQualifier}{inputFileType}\'...")
+
+    # Begin the ciphering process
+    startTime = time.time()
+    try:
+        if cipherMode == 'encrypt':
+            translated = transpositionEncrypt(cipherKey, content)
+        elif cipherMode == 'decrypt':
+            translated = transpositionDecrypt(cipherKey, content)
+    except Exception as e:
+        print(f"While running cipher phase of function function was met with an exception: \'{e}\'.")
+        sys.exit("Quitting...")
+    totalTime = round(time.time() - startTime, 2)
+
+
 def transpositionTest(randomSeed=42, testCases=20, messageBody=string.ascii_uppercase, messageDisplayLength=50) -> None:
     """
     Function for testing the functional operation of the transpositionEncrypt() & transpositionDecrypt() functions.
