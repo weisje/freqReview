@@ -118,3 +118,8 @@
 -Generated fileTranspositionFunction branch off of main branch
     -Branch to add the functionality of the fileTransposition file to the main.py file as a function
 -Added base comments to the transpositionFileCipher() function
+-Created check to see if the user entered a valid cipher type for the program
+-Added filename context based on the selected cipher type
+-Put in constructors for input & output file types provided by the user
+-Added check to see if the input file exists & exit if it does not
+-Added check to see if the output file exists & ask the user to confirm before overwriting the file

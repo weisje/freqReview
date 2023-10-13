@@ -1,29 +1,54 @@
 # Portions of this code were sourced & inspired by "Cracking Codes with Python" https://www.nostarch.com/crackingcodes (BSD Licensed)
 import math
+import os
 import random
 import string
 import sys
+import time
 
 
-def transpositionFileCipher(importDirectoryName, inputFileName, inputFileType, inputQualifier="", cipherMode="encrypt", cipherKey=10) -> None:
+def transpositionFileCipher(inputDirectoryName, inputFileName, inputFileType, inputQualifier="", cipherMode="encrypt", cipherKey=10) -> None:
     """
     Function for applying transposition cipher to entire files stored on the machine's directory.
-    :param importDirectoryName:
-    :type importDirectoryName: str
-    :param inputFileName:
+    :param inputDirectoryName: Name of the folder/filepath that the file to be worked with is stored
+    :type inputDirectoryName: str
+    :param inputFileName: Name of the file, not including qualifiers(like ".encrypted") or filetypes(like ".txt"), that is to be worked.
     :type inputFileName: str
-    :param inputFileType:
+    :param inputFileType: Filetype of the file to be worked, including leading period(".txt")
     :type inputFileType: str
-    :param inputQualifier:
+    :param inputQualifier: Qualifiers that may have been added to the file during previous working(like ".encrypted") that could mess with the file's locating
     :type inputQualifier: str
-    :param cipherMode:
+    :param cipherMode: Mode in which the program will run, either in encryption mode("encrypt") or decryption mode("decrypt")
     :type cipherMode: str
-    :param cipherKey:
+    :param cipherKey: Value to define the length of each "row" when working with the file
     :type cipherKey: int
     :return: None
     """
-    pass
 
+    cipherMode = cipherMode.lower()
+
+    if cipherMode != 'encrypt' and cipherMode != 'decrypt': # Check to assure that the user has only entered an allowed value when entering the cipherMode value
+        print(f"\'{cipherMode}\' is not a valid mode for this function.  The available modes are \'encrypt\' or \'decrypt\'.")
+        sys.exit("Quitting...")
+
+    outputQualifier = f".{cipherMode}ed"
+
+    if cipherMode == 'decrypt':
+        inputQualifier = '.encrypted'
+
+    # Generate filepaths based on the cipherMode that the user has created for the input file & output file
+    fullInputFileName = f"{inputDirectoryName}\\{inputFileName}{inputQualifier}{inputFileType}"
+    fullOutputFileName = f"{inputDirectoryName}\\{inputFileName}{outputQualifier}{inputFileType}"
+
+    if not os.path.exists(fullInputFileName): # Check to see if the input file exists & can be found on the system
+        print(f"\'{fullInputFileName}\' does not exist")
+        sys.exit("Quitting...")
+
+    if os.path.exists(fullOutputFileName): # Check if the output file already exists & can be found
+        print(f"This will overwrite the file: \'{fullOutputFileName}\'. (C)ontinue or (Q)uit?")
+        response = input("> ")
+        if not response.lower().startswith('c'): # If the file does exist & the user selects anything but 'c', exit the program.
+            sys.exit('Quitting...')
 
 def transpositionTest(randomSeed=42, testCases=20, messageBody=string.ascii_uppercase, messageDisplayLength=50) -> None:
     """
