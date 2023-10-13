@@ -5,6 +5,26 @@ import string
 import sys
 
 
+def transpositionFileCipher(importDirectoryName, inputFileName, inputFileType, inputQualifier="", cipherMode="encrypt", cipherKey=10) -> None:
+    """
+    Function for applying transposition cipher to entire files stored on the machine's directory.
+    :param importDirectoryName:
+    :type importDirectoryName: str
+    :param inputFileName:
+    :type inputFileName: str
+    :param inputFileType:
+    :type inputFileType: str
+    :param inputQualifier:
+    :type inputQualifier: str
+    :param cipherMode:
+    :type cipherMode: str
+    :param cipherKey:
+    :type cipherKey: int
+    :return: None
+    """
+    pass
+
+
 def transpositionTest(randomSeed=42, testCases=20, messageBody=string.ascii_uppercase, messageDisplayLength=50) -> None:
     """
     Function for testing the functional operation of the transpositionEncrypt() & transpositionDecrypt() functions.

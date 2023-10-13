@@ -113,3 +113,8 @@
 -Added if statements to better streamline the file finding/file name working process
     -Tested & confirmed it working properly
 -Merged TranspositionFileCipher branch into main branch
+
+13 October 2023
+-Generated fileTranspositionFunction branch off of main branch
+    -Branch to add the functionality of the fileTransposition file to the main.py file as a function
+-Added base comments to the transpositionFileCipher() function
