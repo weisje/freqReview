@@ -7,7 +7,7 @@ import sys
 import time
 
 
-def transpositionFileCipher(inputDirectoryName, inputFileName, inputFileType, inputQualifier="", cipherMode="encrypt", cipherKey=10) -> None:
+def transpositionFileCipher(inputDirectoryName, inputFileName, inputFileType, cipherKey=10, cipherMode="encrypt", inputQualifier="") -> None:
     """
     Function for applying transposition cipher to entire files stored on the machine's directory.
     :param inputDirectoryName: Name of the folder/filepath that the file to be worked with is stored
@@ -16,12 +16,12 @@ def transpositionFileCipher(inputDirectoryName, inputFileName, inputFileType, in
     :type inputFileName: str
     :param inputFileType: Filetype of the file to be worked, including leading period(".txt")
     :type inputFileType: str
-    :param inputQualifier: Qualifiers that may have been added to the file during previous working(like ".encrypted") that could mess with the file's locating
-    :type inputQualifier: str
-    :param cipherMode: Mode in which the program will run, either in encryption mode("encrypt") or decryption mode("decrypt")
-    :type cipherMode: str
     :param cipherKey: Value to define the length of each "row" when working with the file
     :type cipherKey: int
+    :param cipherMode: Mode in which the program will run, either in encryption mode("encrypt") or decryption mode("decrypt")
+    :type cipherMode: str
+    :param inputQualifier: Qualifiers that may have been added to the file during previous working(like ".encrypted") that could mess with the file's locating
+    :type inputQualifier: str
     :return: None
     """
 
@@ -290,7 +290,7 @@ def sarcasmCipher(sourceText):
 
 
 def main():
-    transpositionTest()
+    transpositionFileCipher('Exercises\\Resources', 'frankenstein', '.txt')
 
 
 if __name__ == '__main__':

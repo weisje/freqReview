@@ -132,3 +132,5 @@
     -Block tries writing to defined file.  If it is met with an exception it reports said exception & exits the program
 -Added try/except for reading in input file
 -Added closing print to inform user of success & where they can find their output file
+-Tested functionality of function(heh) & confirmed its expected operation
+-Moved some of the calling variables for the function to make a more coherent order when calling the function
