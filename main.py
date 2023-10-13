@@ -51,13 +51,17 @@ def transpositionFileCipher(inputDirectoryName, inputFileName, inputFileType, in
             sys.exit('Quitting...')
 
     # Read the input file into the function
-    with open(fullInputFileName) as fileObj:
-        content = fileObj.read()
-        fileObj.close()
+    try:
+        with open(fullInputFileName) as fileObj:
+            content = fileObj.read()
+            fileObj.close()
+    except Exception as e:
+        print(f"While running the reading phase of function function was met with an exception: \'{e}\'.")
+        sys.exit("Quitting...")
 
     print(f"{cipherMode.title()}ing \'{inputFileName}{inputQualifier}{inputFileType}\'...")
 
-    # Begin the ciphering process
+    # Begin of ciphering process
     startTime = time.time()
     try:
         if cipherMode == 'encrypt':
@@ -68,7 +72,20 @@ def transpositionFileCipher(inputDirectoryName, inputFileName, inputFileType, in
         print(f"While running cipher phase of function function was met with an exception: \'{e}\'.")
         sys.exit("Quitting...")
     totalTime = round(time.time() - startTime, 2)
+    print(f"{cipherMode.title()}ing time: {totalTime} seconds.")
+    # End of ciphering process
 
+    # Write the translated object into the output file
+    try:
+        with open(fullOutputFileName, 'w') as outputFileObj:
+            outputFileObj.write(translated)
+        outputFileObj.close()
+    except Exception as e:
+        print(f"While running the writing phase of function function was met with an exception: \'{e}\'.")
+        sys.exit("Quitting...")
+
+    print(f"Done {cipherMode.title()}ing \'{fullInputFileName} ({len(content)} characters)")
+    print(f"{cipherMode.title()}ed file is \'{fullOutputFileName}\'.")
 
 def transpositionTest(randomSeed=42, testCases=20, messageBody=string.ascii_uppercase, messageDisplayLength=50) -> None:
     """
