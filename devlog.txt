@@ -169,3 +169,4 @@
     -Passed successfully on following inputs with default thresholds:
         -"Is this an english sentence?" > True
         -"qSc Jubz5 cvV nv person gN8gpgs" > False
+-Merged IsEnglish branch into main branch
