@@ -158,3 +158,6 @@
     -Takes the contents of the provided message, removes characters not defined earlier, & splits it on spaces. It then compares the contents of the results to the word dictionary from ENGLISH_WORDS to see if there are any matches.  If there are it ticks up a counter.  Once it's done it returns a float of counter value divided by the total length of the original message to the calling function
     -Note: The book called for an if statement that the interpreter provided a simplification for.  I agreed with the interpreter & put in the simplified solution but notated the book's version in a comment.
 -Removed TODO flag from getEnglishCount() function
+-Fleshed out removeNonLetters() function
+    -facilitates the removal of characters not defined by LETTERS_AND_SPACES variable from a provided message. Returns results as a string from a joined list of resulting letters
+-Removed TODO flag from removeNonLetters() function

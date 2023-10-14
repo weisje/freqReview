@@ -59,12 +59,16 @@ def getEnglishCount(message) -> float:
 # TODO
 def removeNonLetters(message) -> str:
     """
-
-    :param message:
-    :type message:
+    Function that facilitates the removal of characters not defined by LETTERS_AND_SPACES variable from a provided message
+    :param message: Variable to have non-letters removed from
+    :type message: str
     :return: str
     """
-    pass
+    lettersOnly = [] # Final list of characters that were not removed
+    for symbol in message:
+        if symbol in LETTERS_AND_SPACE:
+            lettersOnly.append(symbol)
+    return ''.join(lettersOnly)
 
 
 # TODO
