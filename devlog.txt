@@ -161,3 +161,7 @@
 -Fleshed out removeNonLetters() function
     -facilitates the removal of characters not defined by LETTERS_AND_SPACES variable from a provided message. Returns results as a string from a joined list of resulting letters
 -Removed TODO flag from removeNonLetters() function
+-Fleshed out isEnglish() function
+    -Function for interrogating a provided message to determine if there are words present in it that are from the word dictionary loaded into the "ENGLISH_WORDS" variable.
+    -Note: Book called for a big preamble explaining what certain parts of the code does.  I just added that to the initialization comment for the function as the param definitions instead.
+-Removed TODO flag from isEnglish() function

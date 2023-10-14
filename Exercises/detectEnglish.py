@@ -56,7 +56,6 @@ def getEnglishCount(message) -> float:
     return float(matches) / len(possibleWords)
 
 
-# TODO
 def removeNonLetters(message) -> str:
     """
     Function that facilitates the removal of characters not defined by LETTERS_AND_SPACES variable from a provided message
@@ -71,16 +70,20 @@ def removeNonLetters(message) -> str:
     return ''.join(lettersOnly)
 
 
-# TODO
 def isEnglish(message, wordPercentage=20, letterPercentage=85) -> bool:
     """
-
-    :param message:
-    :type message:
-    :param wordPercentage:
-    :type wordPercentage:
-    :param letterPercentage:
-    :type letterPercentage:
+    Function for interrogating a provided message to determine if there are words present in it that are from the word dictionary loaded into the "ENGLISH_WORDS" variable.
+    :param message: Value to be reviewed & interrogated for the presence of words that are included in ENGLISH_WORDS variable
+    :type message: str
+    :param wordPercentage: Minimum count of values from message that must be present in ENGLISH_WORDS variable
+    :type wordPercentage: int
+    :param letterPercentage: Minimum count of characters from the message that must be present in LETTERS_AND_SPACE variable
+    :type letterPercentage: int
     :return: bool
     """
-    pass
+    wordsMatch = getEnglishCount(message) * 100 >= wordPercentage
+    numLetters = len(removeNonLetters(message))
+    messageLettersPercentage = float(numLetters) / len(message) * 100 # Find the percentage of defined characters compared to the total length of the message
+    lettersMatch = messageLettersPercentage >= letterPercentage
+
+    return wordsMatch and lettersMatch
