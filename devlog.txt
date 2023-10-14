@@ -141,5 +141,10 @@
     -This branch will be dedicated to creating a file for detecting defined english words within provided bodies of text
 -Added file Exercises > Resources > dictionary.txt
     -File with defined english words for comparison
+    -Added a few missing words to the dictionary
 -Created Exercises > detectEnglish.py
     -Module for this portion of the exercise
+-Added user instruction comment to detectEnglish.py on how to use the module
+-Defined the letter cases via string library
+-Entered function frames for parts of detectEnglish.py
+    -Added TODO flags for each of the incomplete functions
