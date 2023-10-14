@@ -165,3 +165,7 @@
     -Function for interrogating a provided message to determine if there are words present in it that are from the word dictionary loaded into the "ENGLISH_WORDS" variable.
     -Note: Book called for a big preamble explaining what certain parts of the code does.  I just added that to the initialization comment for the function as the param definitions instead.
 -Removed TODO flag from isEnglish() function
+-Tested functionality of detectEnglish.py()
+    -Passed successfully on following inputs with default thresholds:
+        -"Is this an english sentence?" > True
+        -"qSc Jubz5 cvV nv person gN8gpgs" > False
