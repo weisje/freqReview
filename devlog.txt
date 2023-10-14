@@ -135,3 +135,11 @@
 -Tested functionality of function(heh) & confirmed its expected operation
 -Moved some of the calling variables for the function to make a more coherent order when calling the function
 -Merged fileTranspositionFunction branch into main branch.
+
+14 October 2023
+-Generated IsEnglish branch from main branch
+    -This branch will be dedicated to creating a file for detecting defined english words within provided bodies of text
+-Added file Exercises > Resources > dictionary.txt
+    -File with defined english words for comparison
+-Created Exercises > detectEnglish.py
+    -Module for this portion of the exercise
