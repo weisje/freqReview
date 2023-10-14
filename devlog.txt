@@ -148,3 +148,8 @@
 -Defined the letter cases via string library
 -Entered function frames for parts of detectEnglish.py
     -Added TODO flags for each of the incomplete functions
+-Fleshed out loadDictionary() function
+    -Loads the Exercises > Resources > dictionary.txt file into a dictionary as keys with None values
+        -The book has us to this because searching dictionaries is faster than searching lists
+    -Note: I added a function param for the dictionary.txt file instead of having it hard coded as the book instructs.
+    -Removed TODO flag

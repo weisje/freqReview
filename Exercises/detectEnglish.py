@@ -16,13 +16,19 @@ UPPERLETTERS = string.ascii_uppercase
 LETTERS_AND_SPACE = UPPERLETTERS + string.ascii_lowercase + ' \t\n'
 
 
-# TODO
-def loadDictionary() -> dict:
+def loadDictionary(dictionaryFile="Resources\\dictionary.txt") -> dict:
     """
-
+    Function for facilitating the loading of the word dictionary file into the module
+    :param dictionaryFile: Filepath of the word dictionary file to be loaded into the function
+    :type dictionaryFile: str(filepath)
     :return: dict
     """
-    pass
+    dictionaryFile = open(dictionaryFile)
+    englishWords = {}
+    for word in dictionaryFile.read().split('\n'):
+        englishWords[word] = None # Loads words from dictionaryFile into a dictionary with a blank value because dicts are faster to search than lists
+    dictionaryFile.close()
+    return englishWords
 
 
 # TODO
