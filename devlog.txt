@@ -153,3 +153,8 @@
         -The book has us to this because searching dictionaries is faster than searching lists
     -Note: I added a function param for the dictionary.txt file instead of having it hard coded as the book instructs.
     -Removed TODO flag
+-Created variable ENGLISH_WORDS that calls the loadDictionary() function
+-Fleshed out getEnglishCount() function
+    -Takes the contents of the provided message, removes characters not defined earlier, & splits it on spaces. It then compares the contents of the results to the word dictionary from ENGLISH_WORDS to see if there are any matches.  If there are it ticks up a counter.  Once it's done it returns a float of counter value divided by the total length of the original message to the calling function
+    -Note: The book called for an if statement that the interpreter provided a simplification for.  I agreed with the interpreter & put in the simplified solution but notated the book's version in a comment.
+-Removed TODO flag from getEnglishCount() function

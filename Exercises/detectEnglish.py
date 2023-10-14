@@ -31,15 +31,29 @@ def loadDictionary(dictionaryFile="Resources\\dictionary.txt") -> dict:
     return englishWords
 
 
-# TODO
+ENGLISH_WORDS = loadDictionary()
+
+
 def getEnglishCount(message) -> float:
     """
-
-    :param message:
-    :type message:
+    Function that reviews provided string value, compares it to a defined word dictionary, & determines if it contains words or not.
+    :param message: Value to be interrogated & compared to the word dictionary
+    :type message: str
     :return: float
     """
-    pass
+    message = message.upper()
+    message = removeNonLetters(message) # Remove characters that are not defined by the LETTERS_AND_SPACE variable
+    possibleWords = message.split()
+
+    if not possibleWords: # Book: "if possibleWords == []"
+        return 0.0 # no possible words were found in message, so returns 0.0
+
+    matches = 0
+    for word in possibleWords:
+        if word in ENGLISH_WORDS: # Check to see if the current word was found in the loaded word dictionary
+            matches += 1
+
+    return float(matches) / len(possibleWords)
 
 
 # TODO
