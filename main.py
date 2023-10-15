@@ -7,6 +7,62 @@ import sys
 import time
 
 
+# TODO
+def loadDictionary(fullFileName) -> dict:
+    """
+    Function for loading a defined text file containing words on single lines into the program & returning it as a python dictionary
+    :param fullFileName: Full file path to where the text file can be found for loading
+    :type fullFileName: txt
+    :return: dict
+    """
+    pass
+
+
+# TODO
+def getEnglishCount(message, DICTIONARY_WORDS) -> float:
+    """
+    Function to search the provided message for words found in the DICTIONARY_WORDS variable & return a total ratio of words to length of all possible words
+    :param message: String to be interrogated for words found in DICTIONARY_WORDS
+    :type message: str
+    :param DICTIONARY_WORDS: Dictionary of words to search when determining if the provided message has "real" words in it or not
+    :type DICTIONARY_WORDS: dict
+    :return: float
+    """
+    pass
+
+
+# TODO
+def removeNonLetters(message, APPROPRIATE_CHARACTERS) -> str:
+    """
+    Function for returning the provided message with all undefined/inappropriate characters removed
+    :param message: Message to be reviewed & have undefined/inappropriate characters removed
+    :type message: str
+    :param APPROPRIATE_CHARACTERS: All characters that are allowed within the provided message
+    :type APPROPRIATE_CHARACTERS: str
+    :return: str
+    """
+    pass
+
+
+# TODO
+def isEnglish(message, wordPercentage=20, letterPercentage=85, wordFileName="Exercises\\Resources\\dictionary.txt", APPROPRIATE_CHARACTERS=string.ascii_uppercase+string.ascii_lowercase+" \t\n") -> bool:
+    """
+    Function for determining if a provided message contains an acceptable percentage of allowed letters & has an appropriate amount of defined words to determine if it is English.
+    :param message: String value/phrase to be reviewed
+    :type message: str
+    :param wordPercentage: Minimum percentage of words that must exist in the message from the wordFile
+    :type wordPercentage: float
+    :param letterPercentage: Minimum ratio of characters in the message that are featured in APPROPRIATE_CHARACTERS
+    :type letterPercentage: float
+    :param wordFileName: Full file path to where the text file can be found for loading
+    :type wordFileName: str
+    :param APPROPRIATE_CHARACTERS: String of characters that are allowed in the message
+    :type APPROPRIATE_CHARACTERS: str
+    :return: bool
+    """
+    pass
+
+
 def transpositionFileCipher(inputDirectoryName, inputFileName, inputFileType, cipherKey=10, cipherMode="encrypt", inputQualifier="") -> None:
     """
     Function for applying transposition cipher to entire files stored on the machine's directory.

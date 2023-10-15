@@ -173,3 +173,5 @@
 
 15 October 2023
 -Side channelled to headrun on the concept of classes
+-Generated DetectEnglishFunction branch from main branch
+-Added empty function frames(with initialization comments) for loadDictionary(), getEnglishCount(), removeNonLetters(), & isEnglish() functions
