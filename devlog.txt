@@ -181,3 +181,11 @@
         -This is because the book states dicts are faster to search than lists.  Personally I think this is silly from a memory management perspective but if we were so worried about that we should use C instead of Python
     -Return the dict to the caller
     -Removed TODO flag
+-Worked with getEnglishCount()
+    -Convert message to all uppercase
+    -Remove all inappropriate characters from the message
+    -Check to see if any characters left, if not return 0.0 to caller
+    -Go through all the remaining objects & compare them to the objects from the word dictionary
+        -If any matches, then increase the match count by 1
+    -Return the ratio of matches to total possible objects as a float to caller
+    -Removed TODO flag

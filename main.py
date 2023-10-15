@@ -22,7 +22,6 @@ def loadDictionary(fullFileName) -> dict:
     return dictionaryWords
 
 
-# TODO
 def getEnglishCount(message, DICTIONARY_WORDS, APPROPRIATE_CHARACTERS) -> float:
     """
     Function to search the provided message for words found in the DICTIONARY_WORDS variable & return a total ratio of words to length of all possible words
@@ -35,6 +34,18 @@ def getEnglishCount(message, DICTIONARY_WORDS, APPROPRIATE_CHARACTERS) -> float:
     :return: float
     """
 
+    message = message.upper()
+    message = removeNonLetters(message, APPROPRIATE_CHARACTERS)
+    possibleWords = message.split()
+
+    if not possibleWords:  # If there are no possible words(because there are no appropriate characters) then return a 0.0 to say "Hey there isn't anything coherent here
+        return 0.0
+
+    matches = 0 # Variable for counting the number of matching words found from the message within the DICTIONARY_WORDS
+    for word in possibleWords:
+        if word in DICTIONARY_WORDS:
+            matches += 1
+    return float(matches) / len(possibleWords)
 
 # TODO
 def removeNonLetters(message, APPROPRIATE_CHARACTERS) -> str:
