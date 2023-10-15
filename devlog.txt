@@ -175,3 +175,9 @@
 -Side channelled to headrun on the concept of classes
 -Generated DetectEnglishFunction branch from main branch
 -Added empty function frames(with initialization comments) for loadDictionary(), getEnglishCount(), removeNonLetters(), & isEnglish() functions
+-Worked with loadDictionary()
+    -Read provided file into program
+    -for each newlined object in file, create a dict entry with the object as the key & None as the value
+        -This is because the book states dicts are faster to search than lists.  Personally I think this is silly from a memory management perspective but if we were so worried about that we should use C instead of Python
+    -Return the dict to the caller
+    -Removed TODO flag

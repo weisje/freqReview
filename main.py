@@ -7,7 +7,6 @@ import sys
 import time
 
 
-# TODO
 def loadDictionary(fullFileName) -> dict:
     """
     Function for loading a defined text file containing words on single lines into the program & returning it as a python dictionary
@@ -15,20 +14,26 @@ def loadDictionary(fullFileName) -> dict:
     :type fullFileName: txt
     :return: dict
     """
-    pass
+    dictionaryWords = {}
+    with open(fullFileName, 'r') as dictionaryFile:
+        for word in dictionaryFile.read().split('\n'):
+            dictionaryWords[word] = None # Apply each word to dictionaryWords as the key with no value.  This is because dicts are faster to search than lists
+    dictionaryFile.close()
+    return dictionaryWords
 
 
 # TODO
-def getEnglishCount(message, DICTIONARY_WORDS) -> float:
+def getEnglishCount(message, DICTIONARY_WORDS, APPROPRIATE_CHARACTERS) -> float:
     """
     Function to search the provided message for words found in the DICTIONARY_WORDS variable & return a total ratio of words to length of all possible words
     :param message: String to be interrogated for words found in DICTIONARY_WORDS
     :type message: str
     :param DICTIONARY_WORDS: Dictionary of words to search when determining if the provided message has "real" words in it or not
     :type DICTIONARY_WORDS: dict
+    :param APPROPRIATE_CHARACTERS: String of all the allowed characters in the message
+    :type APPROPRIATE_CHARACTERS: str
     :return: float
     """
-    pass
 
 
 # TODO
