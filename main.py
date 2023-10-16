@@ -47,7 +47,8 @@ def getEnglishCount(message, DICTIONARY_WORDS, APPROPRIATE_CHARACTERS) -> float:
             matches += 1
     return float(matches) / len(possibleWords)
 
-# TODO
+
+
 def removeNonLetters(message, APPROPRIATE_CHARACTERS) -> str:
     """
     Function for returning the provided message with all undefined/inappropriate characters removed
@@ -57,7 +58,14 @@ def removeNonLetters(message, APPROPRIATE_CHARACTERS) -> str:
     :type APPROPRIATE_CHARACTERS: str
     :return: str
     """
-    pass
+    appropriateCharsOnly = []
+    for symbol in message:
+        if symbol in APPROPRIATE_CHARACTERS:
+            appropriateCharsOnly.append(symbol)
+
+    return ''.join(appropriateCharsOnly)
+
+
 
 
 # TODO

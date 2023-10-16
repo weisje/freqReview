@@ -189,3 +189,11 @@
         -If any matches, then increase the match count by 1
     -Return the ratio of matches to total possible objects as a float to caller
     -Removed TODO flag
+
+16 October 2023
+-Worked with removeNonLetters()
+    -checked symbols from provided message against appropriate characters.
+    -If the symbol is in the appropriate characters then append it to a list
+    -Convert appended list into a joined string
+    -Return joined string to calling function
+    -Removed TODO flag
