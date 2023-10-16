@@ -81,11 +81,18 @@ def isEnglish(message, wordPercentage=20, letterPercentage=85, wordFileName="Exe
     :return: bool
     """
     wordDictionary = loadDictionary(wordFileName)
-    wordsMatch = getEnglishCount(message, wordDictionary, APPROPRIATE_CHARACTERS) * 100 >= wordPercentage
-    numLetters = len(message)
-    messageLettersPercentage = float(numLetters) / len(message) * 100
-    lettersMatch = messageLettersPercentage >= letterPercentage
-    return wordsMatch and lettersMatch
+
+    try:
+        wordsMatch = getEnglishCount(message, wordDictionary, APPROPRIATE_CHARACTERS) * 100 >= wordPercentage
+        numLetters = len(removeNonLetters(message, APPROPRIATE_CHARACTERS))
+        messageLettersPercentage = float(numLetters) / len(message) * 100
+        lettersMatch = messageLettersPercentage >= letterPercentage
+        return wordsMatch and lettersMatch
+
+    except ZeroDivisionError:
+        print("The isEnglish() function has attempted to divide by zero.  This is likely due to an empty message string being fed to the function")
+        print(f"Provided message length: {len(message)}")
+        sys.exit("Quitting...")
 
 
 def transpositionFileCipher(inputDirectoryName, inputFileName, inputFileType, cipherKey=10, cipherMode="encrypt", inputQualifier="") -> None:
@@ -371,7 +378,7 @@ def sarcasmCipher(sourceText):
 
 
 def main():
-    transpositionFileCipher('Exercises\\Resources', 'frankenstein', '.txt')
+    print(isEnglish("..... Hat !!!!! Ball ????? ~~~~~~~~~~~~~~~~~~~~ ******** (((((((((( 9098765432"))
 
 
 if __name__ == '__main__':
