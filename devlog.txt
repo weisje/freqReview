@@ -197,3 +197,11 @@
     -Convert appended list into a joined string
     -Return joined string to calling function
     -Removed TODO flag
+-Worked with isEnglish()
+    -Loaded dictionary with loadDictionary()
+    -Checked the message for words with getEnglishCount() & compared the result to the wordCount minimum
+    -Got the length of the allowed characters by running removeNonLetters()
+    -Calculated the ratio of the message after removing inappropriate characters to the actual length of the original message
+    -Compared this ratio to the allowed minimum percentage of allowed characters
+    -Returned the results of comparisons as bools
+    -Removed TODO flag

@@ -48,7 +48,6 @@ def getEnglishCount(message, DICTIONARY_WORDS, APPROPRIATE_CHARACTERS) -> float:
     return float(matches) / len(possibleWords)
 
 
-
 def removeNonLetters(message, APPROPRIATE_CHARACTERS) -> str:
     """
     Function for returning the provided message with all undefined/inappropriate characters removed
@@ -66,9 +65,6 @@ def removeNonLetters(message, APPROPRIATE_CHARACTERS) -> str:
     return ''.join(appropriateCharsOnly)
 
 
-
-
-# TODO
 def isEnglish(message, wordPercentage=20, letterPercentage=85, wordFileName="Exercises\\Resources\\dictionary.txt", APPROPRIATE_CHARACTERS=string.ascii_uppercase+string.ascii_lowercase+" \t\n") -> bool:
     """
     Function for determining if a provided message contains an acceptable percentage of allowed letters & has an appropriate amount of defined words to determine if it is English.
@@ -84,7 +80,12 @@ def isEnglish(message, wordPercentage=20, letterPercentage=85, wordFileName="Exe
     :type APPROPRIATE_CHARACTERS: str
     :return: bool
     """
-    pass
+    wordDictionary = loadDictionary(wordFileName)
+    wordsMatch = getEnglishCount(message, wordDictionary, APPROPRIATE_CHARACTERS) * 100 >= wordPercentage
+    numLetters = len(message)
+    messageLettersPercentage = float(numLetters) / len(message) * 100
+    lettersMatch = messageLettersPercentage >= letterPercentage
+    return wordsMatch and lettersMatch
 
 
 def transpositionFileCipher(inputDirectoryName, inputFileName, inputFileType, cipherKey=10, cipherMode="encrypt", inputQualifier="") -> None:
