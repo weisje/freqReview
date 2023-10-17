@@ -1,5 +1,6 @@
 # Portions of this code were sourced & inspired by "Cracking Codes with Python" https://www.nostarch.com/crackingcodes (BSD Licensed)
 import math
+import pyperclip
 import os
 import random
 import string
@@ -33,15 +34,23 @@ def hackTranspositionEngine(message, checkInAmount=10) -> str:
     return None
 
 
-# TODO
-def hackTranspositionController(message) -> str:
+def hackTranspositionController(message) -> None:
     """
     Function for coordinating the cracking of transposition ciphers by orchestrating the operation of the process
     :param message: Encrypted transposition message to be cracked
     :type message: str
     :return: str
     """
-    pass
+    myMessage = message
+
+    hackedMessage = hackTranspositionEngine(myMessage)
+
+    if hackedMessage is None:
+        print("Failed to hack encryption.")
+    else:
+        print("Copying hacked message to clipboard")
+        print(hackedMessage)
+        pyperclip.copy(hackedMessage)
 
 
 def loadDictionary(fullFileName) -> dict:

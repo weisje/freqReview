@@ -257,3 +257,9 @@
     -Displayed possible decryption to user asking for confirmation on message
         -If it is a good one, then it will stop, if not it will continue iterating through keys
     -Removed TODO flag
+-Worked with hackTranspositionController() function in main.py
+    -Defined the variable myMessage to store the message to be decrypted
+    -passed message to the hackTranspositionEngine() function
+    -Checked results from pass
+        -If None then it prints that the decrypt failed.  If it returns a result then it prints the result & copies that to the clipboard.
+    -Removed TODO flag
