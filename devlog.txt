@@ -263,3 +263,10 @@
     -Checked results from pass
         -If None then it prints that the decrypt failed.  If it returns a result then it prints the result & copies that to the clipboard.
     -Removed TODO flag
+-Tested new function functionality
+    -Copied sample message from website & pasted it into myMessage
+    -Result: "key 6: Augusta Ada King-Noel, Countess of Lovelace (10 December 1815 - 27 November 1852) was an English mat"
+    -Tried again, not stopping it when it came across key 6
+    -Result: "Trying key: 400...
+                Trying key: 410...
+                Failed to hack message"
