@@ -216,3 +216,6 @@
         -Added try/Except block for this to catch ZeroDivisionErrors.  Added message & showed user the length of message provided before exiting the program.
         -Tested result.  Task crashed gracefully & as expected.
 -Merged DetectEnglishFunction branch into main branch.
+
+17 October 2023
+-Generated TranspositionHacker branch off of main branch
