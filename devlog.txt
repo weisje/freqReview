@@ -219,3 +219,8 @@
 
 17 October 2023
 -Generated TranspositionHacker branch off of main branch
+-Created Exercises > transpositionHacker.py file
+    -File will be used for exploring the book's code on how to use the detectEnglish.py code to rattle through a bunch of different transposition cipher keys
+-Added header comments
+-Added import statements
+-Generated framing for main() & hackTransposition() functions
