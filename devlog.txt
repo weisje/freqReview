@@ -224,3 +224,12 @@
 -Added header comments
 -Added import statements
 -Generated framing for main() & hackTransposition() functions
+-Worked with hackTransposition() function
+    -Note: The book wanted me to add key prompts here on how to stop the code early by printing common CTRL+(Whatever) prompts but that seemed to go against the MVP of this project.  Did not include it here.
+    -Began forloop to iterate through all keys up to the length of the message
+    -Submitted key to the transpositionDecrypt.decryptMessage() function
+    -Passed result of above to detectEnglish.isEnglish() function
+    -Displayed possible decryption to user asking for confirmation on message
+        -If it is a good one, then it will stop, if not it will continue iterating through keys
+    -Removed TODO flag
+
