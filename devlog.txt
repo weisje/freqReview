@@ -210,7 +210,7 @@
     -Tested "asdfasd yuwiefasd asdfahha" (False)
     -Tested "This asdfasd not asdthte sentence" (True on grounds of threshold variables)
     -Tested "..... Hat !!!!! Ball ????? ~~~~~~~~~~~~~~~~~~~~ ******** (((((((((( 9098765432" (True)
-        -This should have returned False.  After some digging I realized I hadn't actually called the "removeNonLetters()" function when making this comparision.  This means that this variable would have always come back True
+        -This should have returned False.  After some digging I realized I hadn't actually called the "removeNonLetters()" function when making this comparison.  This means that this variable would have always come back True
         -Corrected this, confirmed with retest, results were False
     Tested "" (ZeroDivisionError)
         -Added try/Except block for this to catch ZeroDivisionErrors.  Added message & showed user the length of message provided before exiting the program.
@@ -232,4 +232,8 @@
     -Displayed possible decryption to user asking for confirmation on message
         -If it is a good one, then it will stop, if not it will continue iterating through keys
     -Removed TODO flag
-
+-Worked with main() function
+    -Defined the variable myMessage to store the message to be decrypted
+    -passed message to the hackTransposition() function
+    -Checked results from pass
+        -If None then it prints that the decrypt failed.  If it returns a result then it prints the result & copies that to the clipboard.

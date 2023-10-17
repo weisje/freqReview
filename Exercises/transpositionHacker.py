@@ -7,7 +7,15 @@ import transpositionDecrypt
 
 
 def main():
-    pass
+    myMessage = "" # Message to be hacked
+    hackedMessage = hackTransposition(myMessage)
+
+    if hackedMessage is None:
+        print("Failed to hack message")
+    else:
+        print("Copying hacked message to clipboard")
+        print(hackedMessage)
+        pyperclip.copy(hackedMessage)
 
 
 def hackTransposition(message) -> str:
