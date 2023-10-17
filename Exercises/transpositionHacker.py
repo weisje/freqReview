@@ -38,6 +38,8 @@ def hackTransposition(message) -> str:
             if response.strip().upper().startswith("D"):
                 return decryptedText
 
+    return None
+
 
 if __name__ == '__main__':
     main()

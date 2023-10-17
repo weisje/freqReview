@@ -248,3 +248,5 @@
 -Generated TranspositionHackerFunction branch from main branch
 -Working with main.py()
     -Added frames & initialization comments for the hackTranspositionEngine() and hackTranspositionController() functions
+-Made correction to transpositionHacker.py
+    -Book called for a return None call at the end of hackTransposition() function.  Inserted that
