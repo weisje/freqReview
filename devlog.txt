@@ -250,3 +250,10 @@
     -Added frames & initialization comments for the hackTranspositionEngine() and hackTranspositionController() functions
 -Made correction to transpositionHacker.py
     -Book called for a return None call at the end of hackTransposition() function.  Inserted that
+-Worked with hackTranspositionEngine() function in main.py
+    -Began forloop to iterate through all keys up to the length of the message
+    -Submitted key to the transpositionDecrypt.decryptMessage() function
+    -Passed result of above to detectEnglish.isEnglish() function
+    -Displayed possible decryption to user asking for confirmation on message
+        -If it is a good one, then it will stop, if not it will continue iterating through keys
+    -Removed TODO flag

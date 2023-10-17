@@ -7,7 +7,6 @@ import sys
 import time
 
 
-# TODO
 def hackTranspositionEngine(message, checkInAmount=10) -> str:
     """
     Mechanical operation of cracking transposition ciphers.  Iterates through keys to the length of the message & attempts to decrypt with said keys
@@ -17,13 +16,27 @@ def hackTranspositionEngine(message, checkInAmount=10) -> str:
     :type checkInAmount: int
     :return: str
     """
-    pass
+    for key in range(1, len(message)):
+        if key % checkInAmount == 0:
+            print(f"Trying key: {key}")
+        decryptedMessage = transpositionDecrypt(key, message)
+
+        if isEnglish(decryptedMessage): # If the results of the decrypted message fall into what we have defined as English, then prompt the user for feedback
+            print("\nPossible encryption hack:")
+            print(f"Key {key}: {decryptedMessage[:100]}")
+            print(f"Enter (D)one or press any other key to continue.") # If user presses anything other than "D" then it will keep going through keys.
+            response = input("> ")
+
+            if response.strip().upper().startswith("D"):
+                return decryptedMessage
+
+    return None
 
 
 # TODO
 def hackTranspositionController(message) -> str:
     """
-    Function for coordinating the cracking of transposition ciphers by orchestrating the operation & user interaction of the process
+    Function for coordinating the cracking of transposition ciphers by orchestrating the operation of the process
     :param message: Encrypted transposition message to be cracked
     :type message: str
     :return: str
