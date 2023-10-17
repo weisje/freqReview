@@ -7,6 +7,30 @@ import sys
 import time
 
 
+# TODO
+def hackTranspositionEngine(message, checkInAmount=10) -> str:
+    """
+    Mechanical operation of cracking transposition ciphers.  Iterates through keys to the length of the message & attempts to decrypt with said keys
+    :param message: Encrypted transposition message to be cracked
+    :type message: str
+    :param checkInAmount: Which keys(via modulo) should the program check in with the user while attempting to crack the message
+    :type checkInAmount: int
+    :return: str
+    """
+    pass
+
+
+# TODO
+def hackTranspositionController(message) -> str:
+    """
+    Function for coordinating the cracking of transposition ciphers by orchestrating the operation & user interaction of the process
+    :param message: Encrypted transposition message to be cracked
+    :type message: str
+    :return: str
+    """
+    pass
+
+
 def loadDictionary(fullFileName) -> dict:
     """
     Function for loading a defined text file containing words on single lines into the program & returning it as a python dictionary
