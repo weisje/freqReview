@@ -276,3 +276,5 @@
 -Generated CryptoMath branch off of main branch
 -Read about modular arithmetic & the modulo operator
 -Created Exercises > cryptoMath.py
+-Experimented with a greatest common denominator function using Euclid's Algorithm for them
+    -Book called for using a function containing a while loop.  Based on the function itself I feel like there's potential for a recursive function in there but I cannot sort it out on my own.
