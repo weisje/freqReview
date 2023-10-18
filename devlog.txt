@@ -282,3 +282,8 @@
     -gcd() function will find the greatest common denominator of two provided numbers
     -findModInverse() function will find the modulo value of two provided numbers that calculate out to one
         -i.e. "findModInverse(a,b)" will find c where "(a * b) % c == 1" & return either the value c or None
+-Worked with gcd() function
+    -Loop while a isn't zero
+    -calculate values so that a will equal the result of b % a & b to the new value of a
+    -Once a is zero, return b to caller
+    -Removed TODO flag

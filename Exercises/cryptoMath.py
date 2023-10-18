@@ -2,7 +2,6 @@
 # https://www.nostarch.com/crackingcodes (BSD Licensed)
 
 
-# TODO
 def gcd(a, b) -> int:
     """
     Function for finding the greatest common denominator of two provided integers
@@ -12,7 +11,9 @@ def gcd(a, b) -> int:
     :type b: int
     :return: int
     """
-    pass
+    while a != 0: # Keep going until we reach the lowest we can go
+        a, b = b % a, a # Euclid's formula for calculating GCD
+    return b # once a == 0 return b as the GCD
 
 
 # TODO
