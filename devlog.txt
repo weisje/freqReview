@@ -302,3 +302,4 @@
     -findModInverse(8953851, 26) == 17 (Pass)
     -findModInverse(37, 41) == 10 (Pass)
 -Added better descriptor for findModInverse() function
+-Merged CryptoMath branch into main branch
