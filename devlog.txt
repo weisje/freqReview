@@ -295,3 +295,10 @@
     -Calculates the value i so that (a * i) % m == 1
     -returns a modulo calculation of a portion of the bulky math to m (u1 % m)
     -Removed TODO flag
+-Tested functions with provided data points
+    -gcd(24, 32) == 8 (Pass)
+    -gcd(37, 41) == 1 (Pass)
+    -findModInverse(7, 26) == 15 (Pass)
+    -findModInverse(8953851, 26) == 17 (Pass)
+    -findModInverse(37, 41) == 10 (Pass)
+-Added better descriptor for findModInverse() function

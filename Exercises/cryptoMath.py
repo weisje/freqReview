@@ -16,14 +16,14 @@ def gcd(a, b) -> int:
     return b # once a == 0 return b as the GCD
 
 
-def findModInverse(a, m) -> int:
+def findModInverse(a, m) -> int | None:
     """
     Function for finding the modulo inverse of two provided integers
-    :param a: First value to calculate
+    :param a: Integer to calculate
     :type a: int
-    :param m: Second value to calculate
+    :param m: Modulo to calculate
     :type m: int
-    :return: int,
+    :return: int
     """
     if gcd(a, m) != 1:
         return None # There is no modulo inverse if a & m aren't relatively prime
