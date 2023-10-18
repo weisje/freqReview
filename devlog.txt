@@ -278,3 +278,7 @@
 -Created Exercises > cryptoMath.py
 -Experimented with a greatest common denominator function using Euclid's Algorithm for them
     -Book called for using a function containing a while loop.  Based on the function itself I feel like there's potential for a recursive function in there but I cannot sort it out on my own.
+-Created functions gcd() & findModInverse() & their intial comments within cryptoMath.py
+    -gcd() function will find the greatest common denominator of two provided numbers
+    -findModInverse() function will find the modulo value of two provided numbers that calculate out to one
+        -i.e. "findModInverse(a,b)" will find c where "(a * b) % c == 1" & return either the value c or None
