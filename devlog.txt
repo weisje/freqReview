@@ -271,3 +271,8 @@
                 Trying key: 410...
                 Failed to hack message"
 -Merged TranspositionHackerFunction branch into main branch
+
+18 October 2023
+-Generated CryptoMath branch off of main branch
+-Read about modular arithmetic & the modulo operator
+-Created Exercises > cryptoMath.py
