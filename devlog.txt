@@ -277,13 +277,21 @@
 -Read about modular arithmetic & the modulo operator
 -Created Exercises > cryptoMath.py
 -Experimented with a greatest common denominator function using Euclid's Algorithm for them
-    -Book called for using a function containing a while loop.  Based on the function itself I feel like there's potential for a recursive function in there but I cannot sort it out on my own.
--Created functions gcd() & findModInverse() & their intial comments within cryptoMath.py
+    -Book called for using a function containing a while loop.  Based on the function itself I feel like there's potential for a recursive function in there, but I cannot sort it out.
+-Created functions gcd() & findModInverse() & their initial comments within cryptoMath.py
     -gcd() function will find the greatest common denominator of two provided numbers
     -findModInverse() function will find the modulo value of two provided numbers that calculate out to one
-        -i.e. "findModInverse(a,b)" will find c where "(a * b) % c == 1" & return either the value c or None
+        -i.e. "findModInverse(a,c)" will find b where "(a * b) % c == 1" & return either the value b or None
 -Worked with gcd() function
     -Loop while a isn't zero
     -calculate values so that a will equal the result of b % a & b to the new value of a
     -Once a is zero, return b to caller
+    -Removed TODO flag
+-Worked with findModInverse() function
+    -Takes in values a & m
+    -Checks to see if a & m are relatively prime.  If not then it returns None
+    -Sets initial variable values based on the provided values of a & m
+        -This is a lot of math; basically it does a bulky version of the Euclid function for finding GCD called "Extended Euclid's function"
+    -Calculates the value i so that (a * i) % m == 1
+    -returns a modulo calculation of a portion of the bulky math to m (u1 % m)
     -Removed TODO flag
