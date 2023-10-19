@@ -22,7 +22,6 @@ def gcd(a, b) -> int:
     return b
 
 
-# TODO
 def findModInverse(a, m) -> int | None:
     """
     Function for finding the Mod inverse of a % m, which is the number x such that a*x % m = 1
@@ -32,7 +31,18 @@ def findModInverse(a, m) -> int | None:
     :type m: int
     :return: int | None
     """
-    pass
+    if gcd(a, m) != 1: # The mod inverse cannot be found if the two values aren't relatively prime
+        return None
+
+    # Calculate the mod inverse using Euclid's extended algorithm
+    else:
+        u1, u2, u3 = 1, 0, a
+        v1, v2, v3 = 0, 1, m
+        while v3 != 0:
+            q = u3 // v3
+            v1, v2, v3, u1, u2, u3 = (u1 - q * v1), (u2 - q * v2), (u3 - q * v3), v1, v2, v3
+    return u1 % m
+
 
 def hackTranspositionEngine(message, checkInAmount=10) -> str:
     """
