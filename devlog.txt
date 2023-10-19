@@ -317,3 +317,4 @@
     -Use Euclid's extended algorithm to calculate the modulo inverse for the provided values
     -Return the modulo of u1 with the provided m value
     -Removed TODO flag
+-Merged CryptoMathFunctions branch into main branch
