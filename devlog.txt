@@ -303,3 +303,7 @@
     -findModInverse(37, 41) == 10 (Pass)
 -Added better descriptor for findModInverse() function
 -Merged CryptoMath branch into main branch
+
+19 October 2023
+-Generated CryptoMathFunctions branch off of main branch
+-Added function frame & initial comments for gcd() & findModInverse() functions

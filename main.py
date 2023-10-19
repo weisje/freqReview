@@ -8,6 +8,29 @@ import sys
 import time
 
 
+def gcd(a, b) -> int:
+    """
+    Function for calculating the greatest common denominator of two provided numbers
+    :param a: First value to be compared
+    :type a: int
+    :param b: Second value to be compared
+    :type b: int
+    :return: int
+    """
+    pass
+
+
+def findModInverse(a, m) -> int | None:
+    """
+    Function for finding the Mod inverse of a provided value & modulo
+    :param a: Integer to be multiplied by the suspected value
+    :type a: int
+    :param m: Modulo that will make the result of a * suspected value equal 1
+    :type m: int
+    :return: int | None
+    """
+    pass
+
 def hackTranspositionEngine(message, checkInAmount=10) -> str:
     """
     Mechanical operation of cracking transposition ciphers.  Iterates through keys to the length of the message & attempts to decrypt with said keys
