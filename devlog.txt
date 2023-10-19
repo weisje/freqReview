@@ -307,3 +307,7 @@
 19 October 2023
 -Generated CryptoMathFunctions branch off of main branch
 -Added function frame & initial comments for gcd() & findModInverse() functions
+-Working with gcd():
+    -Created while loop for a not being zero
+    -While a isn't zero set values of a to b % a & b to a
+    -Return b once a is zero
