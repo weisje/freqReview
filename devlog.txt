@@ -324,3 +324,10 @@
 -Created Exercises > affineCipher.py file
 -Added required imports & string
 -Set value SYMBOL to match upper/lowercase letters, numbers, & special symbols " ?!."
+-Added framework of all functions
+-Working with getRandomKey() function:
+    -Filled out initial comments
+    -Started while loop & generated two random integers up to the length of the SYMBOLS variable
+    -Checked to see if the first key("keyA") is relatively prime with the length of the SYMBOLS variable
+        -If so then returns keyA * len(SYMBOLS) + keyB
+    -Removed TODO flag
