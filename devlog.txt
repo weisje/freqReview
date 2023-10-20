@@ -318,3 +318,7 @@
     -Return the modulo of u1 with the provided m value
     -Removed TODO flag
 -Merged CryptoMathFunctions branch into main branch
+
+20 October 2023
+-Generated AffineCipher branch from main branch
+-Created Exercises > affineCipher.py file
