@@ -11,7 +11,25 @@ SYMBOLS = string.ascii_uppercase + string.ascii_lowercase + "1234567890 !?."
 
 
 def main():
-    pass
+    myMessage = """"A computer would deserve to be called intelligent 
+    if it could deceive a human into believing that it was human."
+    -Alan Turing"""
+    myKey = 2894
+    myMode = 'encrypt' # Set to either 'encrypt' or 'decrypt'
+
+    if myMode.lower() == 'encrypt':
+        translated = encryptMessage(myKey, myMessage)
+    elif myMode.lower() == 'decrypt':
+        translated = decryptMessage(myKey, myMessage)
+    else: # What to do if myMode is not set to an acceptable value
+        print(f"\'{myMode}\' is not a valid mode for affineCipher.py.  Restart with either 'encrypt' or 'decrypt' selected.")
+        sys.exit("Quitting...")
+
+    print(f"Key: {myKey}")
+    print(f"{myMode.title()}ed text:")
+    print(translated)
+    pyperclip.copy(translated)
+    print(f"Full {myMode}ed text copied to the clipboard.")
 
 
 # TODO

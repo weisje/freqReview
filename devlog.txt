@@ -331,3 +331,8 @@
     -Checked to see if the first key("keyA") is relatively prime with the length of the SYMBOLS variable
         -If so then returns keyA * len(SYMBOLS) + keyB
     -Removed TODO flag
+-Working with main() function:
+    -Created myMessage, myKey, & myMode variables for storing various controls
+    -Ran if else loop based on the settings of myMode
+    -Displayed translated version of myMessage for user & copied it to the clipboard
+    -Removed TODO flag
