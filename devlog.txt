@@ -322,3 +322,5 @@
 20 October 2023
 -Generated AffineCipher branch from main branch
 -Created Exercises > affineCipher.py file
+-Added required imports & string
+-Set value SYMBOL to match upper/lowercase letters, numbers, & special symbols " ?!."
