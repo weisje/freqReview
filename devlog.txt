@@ -359,3 +359,14 @@
         -If the symbol is not found in the SYMBOLS variable, then apply it unedited to the message
    -Return the context of cipherText to calling function
    -Removed TODO flag
+-Working with decryptMessage() function:
+    -Separated the provided keys with getKeyParts() function
+    -Checked the validity of the keys with checkKeys() function
+    -Generated the modulo inverse of keyA using cryptoMath.getModInverse()
+    -Iterated through each symbol in the message
+        -If the symbol was in SYMBOLS then get the location of symbol in SYMBOLS
+            -Subtract the value of keyB from the symbol's location, multiply that by the modInverse of key A, then find the modulo of that with the length of the SYMBOLS variable.
+                -Append this to plainText
+        -If not then append the symbol unaltered to plainText
+    -Return plainText
+    -Removed TODO flag

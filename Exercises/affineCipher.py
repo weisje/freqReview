@@ -88,17 +88,28 @@ def encryptMessage(key, message) -> str:
     return cipherText
 
 
-# TODO
 def decryptMessage(key, message) -> str:
     """
-
-    :param key:
-    :type key:
-    :param message:
-    :type message:
+    Function for decrypting message that was encrypted with an Affine Cipher.
+    :param key: Key that the message was encrypted with
+    :type key: int
+    :param message: Message encrypted with an Affine Cipher
+    :type message: str
     :return: str
     """
-    pass
+    keyA, keyB = getKeyParts(key)
+    checkKeys(keyA, keyB, 'decrypt')
+    plainText = ""
+    modInverseOfKeyA = cryptoMath.findModInverse(keyA, len(SYMBOLS))
+
+    for symbol in message:
+        if symbol in SYMBOLS:
+            symbolIndex = SYMBOLS.find(symbol) # Locate the symbol in the SYMBOLS variable
+            plainText += SYMBOLS[(symbolIndex - keyB) * modInverseOfKeyA % len(SYMBOLS)]  # Decrypt the symbol
+        else:
+            plainText += symbol # If the symbol not in SYMBOLS then append it directly
+
+    return plainText
 
 
 def getRandomKey() -> int:
