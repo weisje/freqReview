@@ -336,3 +336,10 @@
     -Ran if else loop based on the settings of myMode
     -Displayed translated version of myMessage for user & copied it to the clipboard
     -Removed TODO flag
+
+21 October 2023
+-Working with getKeyParts() function:
+    -Performed floor division on key & length of SYMBOLS value
+    -Got the modulo of the key & length of SYMBOLS value
+    -Returned the two values to the calling function as a tuple
+    -Removed TODO Flag

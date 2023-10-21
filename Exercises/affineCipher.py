@@ -32,15 +32,17 @@ def main():
     print(f"Full {myMode}ed text copied to the clipboard.")
 
 
-# TODO
 def getKeyParts(key) -> tuple:
     """
-
-    :param key:
-    :type key:
+    Function for returning the two portions of a provided key; the floor division of the provided key & the length of the SYMBOLS variable(keyA) as well as the modulo of the provided key & the length of the SYMBOLS variable(keyB).
+    :param key: Number to be mathed upon to generate the two different keys
+    :type key: int
     :return: tuple
     """
-    pass
+    keyA = key // len(SYMBOLS)
+    keyB = key % len(SYMBOLS)
+    keyTuple = (keyA, keyB)
+    return keyTuple
 
 
 # TODO
@@ -92,7 +94,7 @@ def getRandomKey() -> int:
     while True:
         keyA = random.randint(2, len(SYMBOLS))
         keyB = random.randint(2, len(SYMBOLS))
-        if cryptoMath.gcd(keyA, len(SYMBOLS)) == 1:
+        if cryptoMath.gcd(keyA, len(SYMBOLS)) == 1: # If keyA is relatively prime to the length of the SYMBOLS variable
             return keyA * len(SYMBOLS) + keyB
 
 
