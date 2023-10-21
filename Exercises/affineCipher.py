@@ -66,17 +66,26 @@ def checkKeys(keyA, keyB, mode) -> None:
         sys.exit(f"Key A ({keyA}) & the symbol set size {len(SYMBOLS)} are not relatively prime.  Choose a different key.")
 
 
-# TODO
 def encryptMessage(key, message) -> str:
     """
-
-    :param key:
-    :type key:
-    :param message:
-    :type message:
+    Function to encrypt a provided message with the affine cipher.
+    :param key: Value to act as the mathematical calculation for encrypting a provided message.
+    :type key: int
+    :param message: Value to be encrypted with the provided key.
+    :type message: str
     :return: str
     """
-    pass
+    keyA, keyB = getKeyParts(key)
+    checkKeys(keyA, keyB, 'encrypt')
+    cipherText = ""
+    for symbol in message:
+        if symbol in SYMBOLS:
+            symbolIndex = SYMBOLS.find(symbol) # Locate the symbol in the SYMBOLS variable
+            cipherText += SYMBOLS[(symbolIndex * keyA + keyB) % len(SYMBOLS)] # Encrypt the single symbol with the Affine Cipher calculation
+        else:
+            cipherText += symbol # Add the current symbol to the cipherText if it is not included in the SYMBOLS variable
+
+    return cipherText
 
 
 # TODO

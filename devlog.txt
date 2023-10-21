@@ -351,3 +351,11 @@
         -If keyA and the length of SYMBOLS are not relatively prime
     -If any of the above were true, exit out of the program with a console message for the user
     -Removed TODO flag
+-Working with encryptMessage() function:
+    -Separated the provided keys with getKeyParts() function
+    -Checked the validity of the keys with checkKeys() function
+    -Iterated through each symbol in the message
+        -If the symbol was found in SYMBOLS variable, then run the Affine Cipher (SYMBOLS[(symbolIndex * keyA + keyB) % len(SYMBOLS)]) on it in relation to its location within the SYMBOLS variable
+        -If the symbol is not found in the SYMBOLS variable, then apply it unedited to the message
+   -Return the context of cipherText to calling function
+   -Removed TODO flag
