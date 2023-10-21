@@ -370,3 +370,13 @@
         -If not then append the symbol unaltered to plainText
     -Return plainText
     -Removed TODO flag
+-Began testing of affineCipher.py
+    -First test: Encrypt the following with key 2894:
+        """"A computer would deserve to be called intelligent if it could deceive a human into believing that it was human."-Alan Turing"""
+        -Result(PASS): "5QG9ol3La6QI93!xQxaia6faQL9QdaQG1!!axQARLa!!AuaRLQADQALQG93!xQxaGaAfaQ1QX3o1RQARL9Qda!AafARuQLX1LQALQI1iQX3o1RN"-5!1RQP36ARu
+    -Second test: Decrypt the result of previous with key 2894:
+        -""""5QG9ol3La6QI93!xQxaia6faQL9QdaQG1!!axQARLa!!AuaRLQADQALQG93!xQxaGaAfaQ1QX3o1RQARL9Qda!AafARuQLX1LQALQI1iQX3o1RN"-5!1RQP36ARu"""
+        -Result(PASS): ""A computer would deserve to be called intelligent if it could deceive a human into believing that it was human."-Alan Turing" (PASS)
+    -Third test: Force a non-relatively prime error with key value
+        -Key value: 5; mode: encrypt; message: "This is a test message."
+        -Result(PASS): "Key A (0) & the symbol set size (66) are not relatively prime.  Choose a different key."

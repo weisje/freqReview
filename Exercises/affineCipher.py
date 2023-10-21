@@ -11,10 +11,8 @@ SYMBOLS = string.ascii_uppercase + string.ascii_lowercase + "1234567890 !?."
 
 
 def main():
-    myMessage = """"A computer would deserve to be called intelligent 
-    if it could deceive a human into believing that it was human."
-    -Alan Turing"""
-    myKey = 2894
+    myMessage = """"This is a test message."""
+    myKey = 5
     myMode = 'encrypt' # Set to either 'encrypt' or 'decrypt'
 
     if myMode.lower() == 'encrypt':
@@ -63,7 +61,7 @@ def checkKeys(keyA, keyB, mode) -> None:
     if keyA < 0 or keyB < 0 or keyB > len(SYMBOLS):
         sys.exit(f"Key A must be greater than zero & Key B must be between zero and {len(SYMBOLS)}.  Choose a different key.")
     if cryptoMath.gcd(keyA, len(SYMBOLS)) != 1:
-        sys.exit(f"Key A ({keyA}) & the symbol set size {len(SYMBOLS)} are not relatively prime.  Choose a different key.")
+        sys.exit(f"Key A ({keyA}) & the symbol set size ({len(SYMBOLS)}) are not relatively prime.  Choose a different key.")
 
 
 def encryptMessage(key, message) -> str:
