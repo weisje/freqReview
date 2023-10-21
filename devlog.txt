@@ -380,3 +380,4 @@
     -Third test: Force a non-relatively prime error with key value
         -Key value: 5; mode: encrypt; message: "This is a test message."
         -Result(PASS): "Key A (0) & the symbol set size (66) are not relatively prime.  Choose a different key."
+-Merged AffineCipher branch with main branch
