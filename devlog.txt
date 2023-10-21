@@ -343,3 +343,11 @@
     -Got the modulo of the key & length of SYMBOLS value
     -Returned the two values to the calling function as a tuple
     -Removed TODO Flag
+-Working with checkKeys() function:
+    -With if blocks checked for:
+        -If mode is encrypt:
+            -If keyA equals 1 or keyB is zero
+        -If keyA < 0, keyB < 0, or that keyB > len(SYMBOLS)
+        -If keyA and the length of SYMBOLS are not relatively prime
+    -If any of the above were true, exit out of the program with a console message for the user
+    -Removed TODO flag

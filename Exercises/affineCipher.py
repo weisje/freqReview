@@ -45,19 +45,25 @@ def getKeyParts(key) -> tuple:
     return keyTuple
 
 
-# TODO
 def checkKeys(keyA, keyB, mode) -> None:
     """
-
-    :param keyA:
-    :type keyA:
-    :param keyB:
-    :type keyB:
-    :param mode:
-    :type mode:
+    Function to interrogate the strength & validity of submitted keys/key pairs as they apply to an affine cipher.
+    :param keyA: Value proposed for the first portion of the key
+    :type keyA: int
+    :param keyB: Value proposed for the second portion of the key
+    :type keyB: int
+    :param mode: Cipher mode for the system
+    :type mode: str
     :return: None
     """
-    pass
+    if keyA == 1 and mode == 'encrypt':
+        sys.exit("Cipher is weak if key A is 1.  Choose a different key.")
+    if keyB == 0 and mode == 'encrypt':
+        sys.exit("Cipher is weak if key B is 0.  Choose a different key.")
+    if keyA < 0 or keyB < 0 or keyB > len(SYMBOLS):
+        sys.exit(f"Key A must be greater than zero & Key B must be between zero and {len(SYMBOLS)}.  Choose a different key.")
+    if cryptoMath.gcd(keyA, len(SYMBOLS)) != 1:
+        sys.exit(f"Key A ({keyA}) & the symbol set size {len(SYMBOLS)} are not relatively prime.  Choose a different key.")
 
 
 # TODO
