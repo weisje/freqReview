@@ -75,7 +75,6 @@ def decryptAffineMessage(key, message, SYMBOLS) -> str:
     pass
 
 
-# TODO
 def getRandomAffineKey(lenSymbols) -> int:
     """
     Function for generating a random key for use in an Affine Cipher
@@ -83,7 +82,11 @@ def getRandomAffineKey(lenSymbols) -> int:
     :type lenSymbols: int
     :return: int
     """
-    pass
+    while True:
+        keyA = random.randint(2, lenSymbols)
+        keyB = random.randint(2, lenSymbols)
+        if gcd(keyA, lenSymbols) == 1: # If these two values are relatively prime
+            return keyA * lenSymbols + keyB
 
 
 def gcd(a, b) -> int:

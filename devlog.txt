@@ -390,3 +390,10 @@
 
 23 October 2023
 -Added initial comments to recently added functions
+-Working with getRandomAffineKey() function:
+    -Created while loop to keep function iterating during process
+    -Generated random integers for keyA & keyB based on the count of available characters for the cipher
+    -Compared keyA to the count of available characters using gcd():
+        -If the result is 1(The two values are relatively prime) then return keyA * lenSymbols + keyB
+        -Else throw away the random keys & start over
+    -Removed TODO flag
