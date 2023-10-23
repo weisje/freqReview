@@ -8,6 +8,54 @@ import sys
 import time
 
 
+# TODO
+def affineCipher(message, mode, key, SYMBOLS=string.ascii_letters + "1234567890 !?.") -> str:
+    """
+    Function for running an Affine cipher on a provided message
+    :return: str
+    """
+    pass
+
+
+# TODO
+def getAffineKeyParts(key, symbolLen) -> tuple:
+    """
+    Function for separating the provided key into its division floor & modulo based on the length of the supplied symbol list
+    :param key: Key value to be split up
+    :type key: int
+    :param symbolLen: number of allowed symbols being used with the affine cipher.
+    :type symbolLen: int
+    :return: tuple
+    """
+
+
+# TODO
+def checkAffineKeys(keyA, keyB, symbolLen) -> None:
+    """
+    Function to check if the provided keypair will be appropriate & viable for use in an Affine cipher.
+    :param keyA:
+    :param keyB:
+    :param symbolLen:
+    :return: None
+    """
+    pass
+
+
+# TODO
+def encryptAffineMessage():
+    pass
+
+
+# TODO
+def decryptAffineMessage():
+    pass
+
+
+# TODO
+def getRandomAffineKey():
+    pass
+
+
 def gcd(a, b) -> int:
     """
     Function for calculating the greatest common denominator of two provided numbers using Euclid's algorithm
