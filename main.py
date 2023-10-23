@@ -17,7 +17,6 @@ def affineCipher(message, mode, key, SYMBOLS=string.ascii_letters + "1234567890 
     pass
 
 
-# TODO
 def getAffineKeyParts(key, symbolLen) -> tuple:
     """
     Function for separating the provided key into its division floor & modulo based on the length of the supplied symbol list
@@ -27,7 +26,9 @@ def getAffineKeyParts(key, symbolLen) -> tuple:
     :type symbolLen: int
     :return: tuple
     """
-    pass
+    keyA = key // symbolLen
+    keyB = key % symbolLen
+    return keyA, keyB
 
 
 # TODO
@@ -125,7 +126,7 @@ def findModInverse(a, m) -> int | None:
     return u1 % m
 
 
-def hackTranspositionEngine(message, checkInAmount=10) -> str:
+def hackTranspositionEngine(message, checkInAmount=10) -> str | None:
     """
     Mechanical operation of cracking transposition ciphers.  Iterates through keys to the length of the message & attempts to decrypt with said keys
     :param message: Encrypted transposition message to be cracked

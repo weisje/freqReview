@@ -397,3 +397,9 @@
         -If the result is 1(The two values are relatively prime) then return keyA * lenSymbols + keyB
         -Else throw away the random keys & start over
     -Removed TODO flag
+-Working with getAffineKeyParts() function:
+    -Calculated the floor division of provided key & count of available characters for the cipher
+    -Calculated the modulo of the provided key & count of available characters for the cipher
+    -Returned the two calculated values as a tuple
+    -Removed TODO flag
+
