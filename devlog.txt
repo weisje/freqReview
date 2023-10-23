@@ -402,4 +402,10 @@
     -Calculated the modulo of the provided key & count of available characters for the cipher
     -Returned the two calculated values as a tuple
     -Removed TODO flag
-
+-Working with checkAffineKeys() function:
+    -Checked to see in encrypt mode:
+        -If Key A is 1 or key B is zero
+    -Checked to see if Key A or Key B are less than zero or Key B is greater than the symbol set length - 1
+    -Checked to see if Key A and the symbol set length are not relatively prime
+    -If any of above are true, then exit the program with a message saying why
+    -Removed TODO flag

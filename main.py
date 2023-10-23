@@ -9,7 +9,7 @@ import time
 
 
 # TODO
-def affineCipher(message, mode, key, SYMBOLS=string.ascii_letters + "1234567890 !?.") -> str:
+def affineCipher(message, mode, key, SYMBOLS=string.ascii_uppercase + string.ascii_lowercase+ "1234567890 !?.") -> str:
     """
     Function for running an Affine cipher on a provided message
     :return: str
@@ -31,19 +31,32 @@ def getAffineKeyParts(key, symbolLen) -> tuple:
     return keyA, keyB
 
 
-# TODO
-def checkAffineKeys(keyA, keyB, symbolLen) -> None:
+def checkAffineKeys(keyA, keyB, mode, symbolLen) -> None:
     """
     Function to check if the provided keypair will be appropriate & viable for use in an Affine cipher.
     :param keyA: Value to be multiplied by the number of available symbols
     :type keyA: int
     :param keyB: Value to be added to the product of keyA & the number of available symbols
     :type keyB: int
+    :param mode: Variable to inform the function of which mode('encrypt' or 'decrypt' that the Affine Cipher is running in)
     :param symbolLen: Count of the number of symbols available to the cipher
     :type symbolLen: int
     :return: None
     """
-    pass
+    mode = mode.lower()
+    if mode == 'encrypt':
+        if keyA == 1:
+            print("Cipher is weak if Key A is 1.  Choose a different key.")
+            sys.exit("Quitting...")
+        if keyB == 0:
+            print("Cipher is weak if Key B is 0.  Choose a different key.")
+            sys.exit("Quitting...")
+    if keyA < 0 or keyB < 0 or keyB > symbolLen - 1:
+        print(f"Key A must be greater than 0 & Key B must be between 0 & {symbolLen}.")
+        sys.exit("Quitting")
+    if gcd(keyA, symbolLen) != 1:
+        print(f"Key A ({keyA}) & the symbol set size ({symbolLen}) are not relatively prime.  Choose a different key.")
+
 
 
 # TODO
@@ -76,18 +89,18 @@ def decryptAffineMessage(key, message, SYMBOLS) -> str:
     pass
 
 
-def getRandomAffineKey(lenSymbols) -> int:
+def getRandomAffineKey(symbolLen) -> int:
     """
     Function for generating a random key for use in an Affine Cipher
-    :param lenSymbols: Count of the number of symbols available to the Affine Cipher
-    :type lenSymbols: int
+    :param symbolLen: Count of the number of symbols available to the Affine Cipher
+    :type symbolLen: int
     :return: int
     """
     while True:
-        keyA = random.randint(2, lenSymbols)
-        keyB = random.randint(2, lenSymbols)
-        if gcd(keyA, lenSymbols) == 1: # If these two values are relatively prime
-            return keyA * lenSymbols + keyB
+        keyA = random.randint(2, symbolLen)
+        keyB = random.randint(2, symbolLen)
+        if gcd(keyA, symbolLen) == 1: # If these two values are relatively prime
+            return keyA * symbolLen + keyB
 
 
 def gcd(a, b) -> int:
