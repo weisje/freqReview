@@ -387,3 +387,6 @@
 -Working with main.py:
     -Added following functions:
         -affineCipher(), getAffineKeyParts(), checkAffineKeys(), encryptAffineMessage(), decryptAffineMessage(), getRandomAffineKey()
+
+23 October 2023
+-Added initial comments to recently added functions

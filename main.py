@@ -27,32 +27,62 @@ def getAffineKeyParts(key, symbolLen) -> tuple:
     :type symbolLen: int
     :return: tuple
     """
+    pass
 
 
 # TODO
 def checkAffineKeys(keyA, keyB, symbolLen) -> None:
     """
     Function to check if the provided keypair will be appropriate & viable for use in an Affine cipher.
-    :param keyA:
-    :param keyB:
-    :param symbolLen:
+    :param keyA: Value to be multiplied by the number of available symbols
+    :type keyA: int
+    :param keyB: Value to be added to the product of keyA & the number of available symbols
+    :type keyB: int
+    :param symbolLen: Count of the number of symbols available to the cipher
+    :type symbolLen: int
     :return: None
     """
     pass
 
 
 # TODO
-def encryptAffineMessage():
+def encryptAffineMessage(key, message, SYMBOLS) -> str:
+    """
+    Function for encrypting a provided string with an Affine Cipher using the provided key & available SYMBOLS.
+    :param key: Key to encrypt provided message with Affine Cipher
+    :type key: int
+    :param message: Message to be encrypted by the Affine Cipher
+    :type message: str
+    :param SYMBOLS: Characters available for encrypting the message with the Affine Cipher
+    :type SYMBOLS: str
+    :return: str
+    """
     pass
 
 
 # TODO
-def decryptAffineMessage():
+def decryptAffineMessage(key, message, SYMBOLS) -> str:
+    """
+    Function for decrypting a provided string with an Affine Cipher using the provided key & available SYMBOLS.
+    :param key: Key to decrypt provided message with Affine Cipher
+    :type key: int
+    :param message: Message to be decrypted with the Affine Cipher
+    :type message: str
+    :param SYMBOLS: Characters available for decrypting the message with the Affine Cipher
+    :type SYMBOLS: str
+    :return: str
+    """
     pass
 
 
 # TODO
-def getRandomAffineKey():
+def getRandomAffineKey(lenSymbols) -> int:
+    """
+    Function for generating a random key for use in an Affine Cipher
+    :param lenSymbols: Count of the number of symbols available to the Affine Cipher
+    :type lenSymbols: int
+    :return: int
+    """
     pass
 
 
@@ -304,6 +334,7 @@ def transpositionFileCipher(inputDirectoryName, inputFileName, inputFileType, ci
 
     print(f"Done {cipherMode.title()}ing \'{fullInputFileName} ({len(content)} characters)")
     print(f"{cipherMode.title()}ed file is \'{fullOutputFileName}\'.")
+
 
 def transpositionTest(randomSeed=42, testCases=20, messageBody=string.ascii_uppercase, messageDisplayLength=50) -> None:
     """
