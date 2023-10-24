@@ -8,7 +8,6 @@ import sys
 import time
 
 
-# TODO
 def affineCipher(message, key, mode, SYMBOLS=string.ascii_uppercase + string.ascii_lowercase + "1234567890 !?.") -> str:
     """
     Function for running an Affine cipher on a provided message
@@ -68,9 +67,10 @@ def checkAffineKeys(keyA, keyB, mode, symbolLen) -> None:
             sys.exit("Quitting...")
     if keyA < 0 or keyB < 0 or keyB > symbolLen - 1:
         print(f"Key A must be greater than 0 & Key B must be between 0 & {symbolLen}.")
-        sys.exit("Quitting")
+        sys.exit("Quitting...")
     if gcd(keyA, symbolLen) != 1:
         print(f"Key A ({keyA}) & the symbol set size ({symbolLen}) are not relatively prime.  Choose a different key.")
+        sys.exit("Quitting...")
 
 
 def encryptAffineMessage(key, message, SYMBOLS) -> str:
@@ -592,7 +592,9 @@ def sarcasmCipher(sourceText):
 
 def main():
     myMessage = """"A computer would deserve to be called intelligent if it could deceive a human into believing that it was human." -Alan Turing"""
-    affineCipher(myMessage,  2894, "Encrypt")
+    myKey = 15
+    myMode = "BadMode"
+    affineCipher(myMessage,  myKey, myMode)
 
 
 if __name__ == '__main__':

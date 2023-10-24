@@ -427,3 +427,41 @@
     -Copy content of translated message to clipboard
     -Print results
     -Removed TODO flag
+-Started on testing of the affineCipher function
+    -Test1(Does it encrypt?):
+        -myMessage = """"A computer would deserve to be called intelligent if it could deceive a human into believing that it was human." -Alan Turing"""
+        -myKey = 2894
+        -myMode = "Encrypt"
+        -Result: """"5QG9ol3La6QI93!xQxaia6faQL9QdaQG1!!axQARLa!!AuaRLQADQALQG93!xQxaGaAfaQ1QX3o1RQARL9Qda!AafARuQLX1LQALQI1iQX3o1RN"Q-5!1RQP36ARu"""
+        -Desired Pass/Fail: PASS
+        -Pass/Fail: PASS
+
+    -Test2(Does it decrypt?:
+        -myMessage = """"5QG9ol3La6QI93!xQxaia6faQL9QdaQG1!!axQARLa!!AuaRLQADQALQG93!xQxaGaAfaQ1QX3o1RQARL9Qda!AafARuQLX1LQALQI1iQX3o1RN"Q-5!1RQP36ARu"""
+        -myKey = 2894
+        -myMode = "Decrypt"
+        -Result: """"A computer would deserve to be called intelligent if it could deceive a human into believing that it was human." -Alan Turing"""
+        -Desired Pass/Fail: PASS
+        -Pass/Fail: PASS
+
+    -Test3(Does it catch bad keys?):
+    -myMessage = """"A computer would deserve to be called intelligent if it could deceive a human into believing that it was human." -Alan Turing"""
+    -myKey = 15
+    -myMode = "Encrypt"
+    -Result: "Key A (0) & the symbol set size (66) are not relatively prime.  Choose a different key.
+            Key: 15
+            Encrypted text:
+            "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP"P-PPPPPPPPPPP
+            Full encrypted text copied to clipboard"
+    -Desired Pass/Fail: FAIL
+    -Pass/Fail: PASS
+    -Note: This was supposed to exit the program before attempting the ciphering.  Realized there was a missing sys.exit() in the checkAffineKeys() function.  Corrected this problem.
+
+    -Test4(Does it catch bad modes?)
+    -myMessage = """"A computer would deserve to be called intelligent if it could deceive a human into believing that it was human." -Alan Turing"""
+    -myKey = 15
+    -myMode = "BadMode"
+    -Result: ""Badmode" is not a valid mode.  Please retry with either "encrypt" or "decrypt".
+                Quitting..."
+    -Desired Pass/Fail: FAIL
+    -Pass/Fail: FAIL
