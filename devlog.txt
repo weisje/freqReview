@@ -409,3 +409,14 @@
     -Checked to see if Key A and the symbol set length are not relatively prime
     -If any of above are true, then exit the program with a message saying why
     -Removed TODO flag
+
+24 October 2023
+-Working with encryptAffineMessage() function:
+    -Gathered keys from supplied key with getAffineKeyParts() function
+    -Checked the validity of the separated keys with checkAffineKeys() function
+    -Looped through the characters in the provided message
+        -if the character is in the SYMBOLS set, then copy its location & perform an affineCipher calculation(characterLocation * keyA + keyB) % len(SYMBOLS)
+            -Append the newly calculated symbol to the return value
+        -If not, then append the character directly to the return value
+    -Return the return value to caller
+    -Removed TODO flag

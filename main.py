@@ -58,8 +58,6 @@ def checkAffineKeys(keyA, keyB, mode, symbolLen) -> None:
         print(f"Key A ({keyA}) & the symbol set size ({symbolLen}) are not relatively prime.  Choose a different key.")
 
 
-
-# TODO
 def encryptAffineMessage(key, message, SYMBOLS) -> str:
     """
     Function for encrypting a provided string with an Affine Cipher using the provided key & available SYMBOLS.
@@ -71,7 +69,17 @@ def encryptAffineMessage(key, message, SYMBOLS) -> str:
     :type SYMBOLS: str
     :return: str
     """
-    pass
+    keyA, keyB = getAffineKeyParts(key)
+    checkAffineKeys(keyA, keyB, len(SYMBOLS))
+    cipherText = ""
+    for symbol in message:
+        if symbol in SYMBOLS: # If the symbol being evaluated is included in the SYMBOLS set, then encrypt it
+            symbolIndex = SYMBOLS.find(symbol)
+            cipherCalc = (symbolIndex * keyA + keyB) % len(SYMBOLS)
+            cipherText += SYMBOLS[cipherCalc]
+        else:
+            cipherText += symbol
+    return cipherText
 
 
 # TODO
