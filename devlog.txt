@@ -465,3 +465,4 @@
                 Quitting..."
     -Desired Pass/Fail: FAIL
     -Pass/Fail: FAIL
+-Merged AffineCipherFunction branch with main branch
