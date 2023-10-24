@@ -69,8 +69,8 @@ def encryptAffineMessage(key, message, SYMBOLS) -> str:
     :type SYMBOLS: str
     :return: str
     """
-    keyA, keyB = getAffineKeyParts(key)
-    checkAffineKeys(keyA, keyB, len(SYMBOLS))
+    keyA, keyB = getAffineKeyParts(key, len(SYMBOLS))
+    checkAffineKeys(keyA, keyB, 'encrypt', len(SYMBOLS))
     cipherText = ""
     for symbol in message:
         if symbol in SYMBOLS: # If the symbol being evaluated is included in the SYMBOLS set, then encrypt it
@@ -82,7 +82,6 @@ def encryptAffineMessage(key, message, SYMBOLS) -> str:
     return cipherText
 
 
-# TODO
 def decryptAffineMessage(key, message, SYMBOLS) -> str:
     """
     Function for decrypting a provided string with an Affine Cipher using the provided key & available SYMBOLS.
@@ -94,7 +93,20 @@ def decryptAffineMessage(key, message, SYMBOLS) -> str:
     :type SYMBOLS: str
     :return: str
     """
-    pass
+    keyA, keyB = getAffineKeyParts(key, len(SYMBOLS))
+    checkAffineKeys(keyA, keyB, 'decrypt', len(SYMBOLS))
+    plainText = ""
+    modInverseOfKeyA = findModInverse(keyA, len(SYMBOLS)) # Precalculate the mod inverse to avoid having to do it for every iteration
+
+    for symbol in message:
+        if symbol in SYMBOLS: # If the symbol is in the allowed SYMBOLS, then decrypt it
+            symbolIndex = SYMBOLS.find(symbol)
+            plainCalc = (symbolIndex - keyB) * modInverseOfKeyA % len(SYMBOLS)
+            plainText += SYMBOLS[plainCalc]
+        else:
+            plainText += symbol
+
+    return plainText
 
 
 def getRandomAffineKey(symbolLen) -> int:
