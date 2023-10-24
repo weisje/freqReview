@@ -9,12 +9,27 @@ import time
 
 
 # TODO
-def affineCipher(message, mode, key, SYMBOLS=string.ascii_uppercase + string.ascii_lowercase+ "1234567890 !?.") -> str:
+def affineCipher(message, key, mode, SYMBOLS=string.ascii_uppercase + string.ascii_lowercase + "1234567890 !?.") -> str:
     """
     Function for running an Affine cipher on a provided message
     :return: str
     """
-    pass
+    myMessage = message
+    myKey = key
+    myMode = mode.lower()
+
+    if myMode == 'encrypt':
+        translated = encryptAffineMessage(myKey, myMessage, SYMBOLS)
+    elif myMode == 'decrypt':
+        translated = decryptAffineMessage(myKey, myMessage, SYMBOLS)
+    else:
+        print(f"\"{myMode.title()}\" is not a valid mode.  Please retry with either \"encrypt\" or \"decrypt\".")
+        sys.exit("Quitting...")
+    print(f"Key: {myKey}")
+    print(f"{myMode.title()}ed text:")
+    print(f"{translated}")
+    pyperclip.copy(translated)
+    print(f"Full {myMode}ed text copied to clipboard")
 
 
 def getAffineKeyParts(key, symbolLen) -> tuple:
@@ -576,8 +591,8 @@ def sarcasmCipher(sourceText):
 
 
 def main():
-    myMessage = "AaKoosoeDe5 b5sn ma reno ora'lhlrrceey e  enlh na  indeit n uhoretrm au ieu v er Ne2 gmanw,forwnlbsya apor tE.no euarisfatt  e mealefedhsppmgAnlnoe(c -or)alat r lw o eb  nglom,Ain one dtes ilhetcdba. t tg eturmudg,tfl1e1 v  nitiaicynhrCsaemie-sp ncgHt nie cetrgmnoa yc r,ieaa  toesa- e a0m82e1w shcnth  ekh gaecnpeutaaieetgn iodhso d ro hAe snrsfcegrt NCsLc b17m8aEheideikfr aBercaeu thllnrshicwsg etriebruaisss  d iorr."
-    hackTranspositionController(myMessage)
+    myMessage = """"A computer would deserve to be called intelligent if it could deceive a human into believing that it was human." -Alan Turing"""
+    affineCipher(myMessage,  2894, "Encrypt")
 
 
 if __name__ == '__main__':

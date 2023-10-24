@@ -420,13 +420,10 @@
         -If not, then append the character directly to the return value
     -Return the return value to caller
     -Removed TODO flag
--Working with decryptAffineMessage() function:
-    -Gathered keys from supplied key with getAffineKeyParts() function
-    -Checked the validity of the separated keys with checkAffineKeys() function
-    -Pre-calculated the modular inverse of keyA & the length of the SYMBOLS set
-        -Looped through the characters in the provided message
-        -if the character is in the SYMBOLS set, then copy its location & perform an affineCipher calculation((characterLocation -  keyB) * modInverseOfKeyA % len(SYMBOLS))
-            -Append the newly calculated symbol to the return value
-        -If not, then append the character directly to the return value
-    -Return the return value to caller
+-Working with affineCipher() function
+    -Called the encryptAffineMessage if mode set to encrypt
+    -Called the decryptAffineMessage if mode set to decrypt
+    -Exit program if mode not set to encrypt or decrypt
+    -Copy content of translated message to clipboard
+    -Print results
     -Removed TODO flag
