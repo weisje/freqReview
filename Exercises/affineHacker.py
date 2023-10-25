@@ -6,10 +6,20 @@ import cryptoMath
 import detectEnglish
 import pyperclip
 
+SILENT_MODE = False
 
-# TODO
+
 def main():
-    pass
+    myMessage = """"5QG9ol3La6QI93!xQxaia6faQL9QdaQG1!!axQARLa!!AuaRLQADQALQG93!xQxaGaAfaQ1QX3o1RQARL9Qda!AafARuQLX1LQALQI1iQX3o1RN"Q-5!1RQP36ARu"""
+
+    hackedMessage = hackAffine(myMessage)
+
+    if hackedMessage is not None:
+        print("Copying hacked message to clipboard: ")
+        print(hackedMessage)
+        pyperclip.copy(hackedMessage)
+    else:
+        print("Failed to hack encryption.")
 
 
 def hackAffine(message) -> str | None:
@@ -23,7 +33,7 @@ def hackAffine(message) -> str | None:
 
     for key in range(len(affineCipher.SYMBOLS) ** 2): # Iterate through all the possible keys up to the square of the length of allowed symbols
         keyA = affineCipher.getKeyParts(key)[0]
-        if cryptoMath.gcd(keyA, len(affineCipher.SYMBOLS)) != 1:
+        if cryptoMath.gcd(keyA, len(affineCipher.SYMBOLS)) != 1: # Skip over keys who are not relatively prime to one another
             continue
         decryptedText = affineCipher.decryptMessage(key, message)
         if not SILENT_MODE:
