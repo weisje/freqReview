@@ -466,3 +466,8 @@
     -Desired Pass/Fail: FAIL
     -Pass/Fail: FAIL
 -Merged AffineCipherFunction branch with main branch
+
+25 October 2023
+-Generated AffineHacker branch off of main branch
+-Created Exercises > affineHacker.py
+    -Added main() function frame
