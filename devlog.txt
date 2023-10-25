@@ -471,3 +471,4 @@
 -Generated AffineHacker branch off of main branch
 -Created Exercises > affineHacker.py
     -Added main() function frame
+    -Added hackAffine() function frame
