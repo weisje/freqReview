@@ -509,3 +509,4 @@
            -If successful copies message to clipboard
            -If not it prints that the hack was unsuccessful
        -Removed TODO flag
+-Tested hackAffine() function
