@@ -8,14 +8,59 @@ import sys
 import time
 
 
-def affineCipher(message, key, mode, SYMBOLS=string.ascii_uppercase + string.ascii_lowercase + "1234567890 !?.") -> str:
+# TODO
+def affineHacker(message) -> None:
+    """
+    Orchestrates the hacking of messages believed to be encrypted by an Affine Cipher
+    :param message: Value to be interrogated to see if it can be decrypted as an Affine Cipher
+    :type message: str
+    :return: None
+    """
+    pass
+
+
+def hackAffine(message, SILENT_MODE, SYMBOLS= string.ascii_uppercase + string.ascii_lowercase + "1234567890 !?.") -> str | None:
+    """
+    Engine for brute forcing a message & seeing if it can be decrypted via Affine Cipher
+    :param message: Value to be interrogated to see if it can be decrypted as an Affine Cipher
+    :type message: str
+    :param SILENT_MODE: Switch to tell the program whether to display each key as it works or not
+    :type SILENT_MODE: bool
+    :param SYMBOLS: Available characters for decrypting the message
+    :type SYMBOLS: str
+    :return: str | None
+    """
+    for key in range(len(SYMBOLS) ** 2): # Run through all possible keys up to the square of lenSymbols
+        keyA = getAffineKeyParts(key, len(SYMBOLS))[0]
+        if gcd(keyA, len(SYMBOLS)) != 1: # Check to see if keyA & lenSymbols are relatively prime
+            continue
+        decryptedText = decryptAffineMessage(key, message, SYMBOLS)
+        if not SILENT_MODE:
+            print(f"Tried Key {key}...{decryptedText[:40]}")
+
+        if isEnglish(decryptedText):
+            print("\nPossible encryption hack:")
+            print(f"Key: {key}")
+            print(f"Decrypted Message: {decryptedText[:200]}\n")
+            print("Enter (D)one to accept or press Enter to continue hacking:")
+            response = input("> ")
+
+        if response.strip().upper().startswith('D'):
+            return decryptedText
+
+    return None
+
+
+# TODO
+def affineCipher(message, key, mode, SYMBOLS=string.ascii_uppercase + string.ascii_lowercase + "1234567890 !?.") -> None:
     """
     Function for running an Affine cipher on a provided message
-    :return: str
+    :return: None
     """
     myMessage = message
     myKey = key
     myMode = mode.lower()
+    SYMBOLS = SYMBOLS
 
     if myMode == 'encrypt':
         translated = encryptAffineMessage(myKey, myMessage, SYMBOLS)

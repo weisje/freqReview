@@ -490,3 +490,15 @@
             -If not it prints that the hack was unsuccessful
         -Removed TODO flag
 -Pushed AffineHacker branch to main branch
+
+26 October 2023
+-Created AffineHackerFunction branch off of main branch
+-Added frame of functions affineHacker() & hackAffine() as well as their initial comments.
+-Working with hackAffine() function:
+    -Iterated through all keys in the range up to the square of the count of available characters
+    -Checked for key validity on each key with cryptoMath & checkKey
+    -Created decrypted text with the provided key
+    -Checked decrypted text with detectEnglish function
+    -Checked with user to see if the message is english & if not keep going
+    -Returned decryptedText
+    -Removed TODO flag
