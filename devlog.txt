@@ -502,3 +502,10 @@
     -Checked with user to see if the message is english & if not keep going
     -Returned decryptedText
     -Removed TODO flag
+-Working with affineHacker() function:
+    -Populated myMessage
+       -Added SILENT_MODE flag
+       -Passed message to hackAffine
+           -If successful copies message to clipboard
+           -If not it prints that the hack was unsuccessful
+       -Removed TODO flag

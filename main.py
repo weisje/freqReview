@@ -8,18 +8,29 @@ import sys
 import time
 
 
-# TODO
-def affineHacker(message) -> None:
+def affineHacker(message, SILENT_MODE=False, SYMBOLS=string.ascii_uppercase + string.ascii_lowercase + "1234567890 !?.") -> None:
     """
     Orchestrates the hacking of messages believed to be encrypted by an Affine Cipher
     :param message: Value to be interrogated to see if it can be decrypted as an Affine Cipher
     :type message: str
+    :param SILENT_MODE: Switch to tell the program whether to display each key as it works or not
+    :type SILENT_MODE: bool
+    :param SYMBOLS: Available characters for decrypting the message
+    :type SYMBOLS: str
     :return: None
     """
-    pass
+    SILENT_MODE = SILENT_MODE
+    myMessage = message
+    hackedMessage = hackAffine(myMessage, SILENT_MODE, SYMBOLS)
+    if hackedMessage is not None:
+        print("Copying hacked message to clipboard")
+        print(hackedMessage)
+        pyperclip.copy(hackedMessage)
+    else:
+        print("Failed to hack encryption.")
 
 
-def hackAffine(message, SILENT_MODE, SYMBOLS= string.ascii_uppercase + string.ascii_lowercase + "1234567890 !?.") -> str | None:
+def hackAffine(message, SILENT_MODE, SYMBOLS) -> str | None:
     """
     Engine for brute forcing a message & seeing if it can be decrypted via Affine Cipher
     :param message: Value to be interrogated to see if it can be decrypted as an Affine Cipher
@@ -51,7 +62,6 @@ def hackAffine(message, SILENT_MODE, SYMBOLS= string.ascii_uppercase + string.as
     return None
 
 
-# TODO
 def affineCipher(message, key, mode, SYMBOLS=string.ascii_uppercase + string.ascii_lowercase + "1234567890 !?.") -> None:
     """
     Function for running an Affine cipher on a provided message
@@ -636,10 +646,10 @@ def sarcasmCipher(sourceText):
 
 
 def main():
-    myMessage = """"A computer would deserve to be called intelligent if it could deceive a human into believing that it was human." -Alan Turing"""
+    myMessage = """"5QG9ol3La6QI93!xQxaia6faQL9QdaQG1!!axQARLa!!AuaRLQADQALQG93!xQxaGaAfaQ1QX3o1RQARL9Qda!AafARuQLX1LQALQI1iQX3o1RN"Q-5!1RQP36ARu"""
     myKey = 15
     myMode = "BadMode"
-    affineCipher(myMessage,  myKey, myMode)
+    affineHacker(myMessage)
 
 
 if __name__ == '__main__':
