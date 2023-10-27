@@ -517,3 +517,9 @@
     -Created Exercises > simpleSubCipher.py
         -Added imports for the program
         -Created initial functions with their initialization comments
+        -Working with keyIsValid() function:
+            -Created a list of the characters in the provided key
+            -Created list of the characters in the available LETTERS
+            -Sorted the two lists alphabetically
+            -Returned a bool of the compared values to the caller
+            -Removed TODO flag

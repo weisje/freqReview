@@ -1,9 +1,12 @@
 # Simple Substitution Cipher
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
+import string
 import pyperclip
 import random
 import sys
+
+LETTERS = string.ascii_uppercase
 
 
 # TODO
@@ -11,7 +14,6 @@ def main():
     pass
 
 
-# TODO
 def keyIsValid(key) -> bool:
     """
     Checks to see if the key & available cipher letters contain the same characters.
@@ -19,7 +21,11 @@ def keyIsValid(key) -> bool:
     :type key: str
     :return: bool
     """
-    pass
+    keyList = list(key)
+    lettersList = list(LETTERS)
+    keyList.sort()
+    lettersList.sort()
+    return keyList == lettersList
 
 
 # TODO
