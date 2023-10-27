@@ -511,3 +511,7 @@
        -Removed TODO flag
 -Tested hackAffine() function
 -Merged AffineHackerFunction branch with main branch
+
+27 October 2023
+-Created SimpleSubCipher branch from main branch
+    -Created Exercises > simpleSubCipher.py
