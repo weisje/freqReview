@@ -523,3 +523,7 @@
             -Sorted the two lists alphabetically
             -Returned a bool of the compared values to the caller
             -Removed TODO flag
+        -Working with encryptMessage() & encryptMessage() functions:
+            -Called on translateMessage() function with the appropriate mode assigned
+            -Returned result to caller
+            -Removed TODO flags

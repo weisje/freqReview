@@ -28,7 +28,6 @@ def keyIsValid(key) -> bool:
     return keyList == lettersList
 
 
-# TODO
 def encryptMessage(key, message) -> str:
     """
     Encrypts with a simple sub cipher the provided message with the provided key.
@@ -38,10 +37,9 @@ def encryptMessage(key, message) -> str:
     :type message: str
     :return: str
     """
-    pass
+    return translateMessage(key, message, 'encrypt')
 
 
-# TODO
 def decryptMessage(key, message) -> str:
     """
     Decrypts with a simple sub cipher the provided message with the provided key.
@@ -51,7 +49,7 @@ def decryptMessage(key, message) -> str:
     :type message: str
     :return: str
     """
-    pass
+    return translateMessage(key, message, 'decrypt')
 
 
 # TODO
