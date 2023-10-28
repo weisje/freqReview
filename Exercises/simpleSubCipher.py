@@ -73,7 +73,9 @@ def getRandomKey() -> str:
     Takes the available list of characters, mixes them up, & returns the result to the caller.
     :return: str
     """
-    pass
+    key = list(LETTERS)
+    random.shuffle(key)
+    return ''.join(key)
 
 
 if __name__ == '__main__':

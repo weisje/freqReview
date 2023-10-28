@@ -527,3 +527,7 @@
             -Called on translateMessage() function with the appropriate mode assigned
             -Returned result to caller
             -Removed TODO flags
+
+28 October 2023
+-Working with getRandomKey() function:
+    -Took the list of available characters, mixed it up randomly, & returned the mess as a string.
