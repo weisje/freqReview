@@ -531,3 +531,15 @@
 28 October 2023
 -Working with getRandomKey() function:
     -Took the list of available characters, mixed it up randomly, & returned the mess as a string.
+
+29 October 2023
+-Working with translateMessage() function:
+    -Took in available characters for the cipher & the key provided by the user
+    -Checked if mode is decrypt
+        -If so the then swap the characters for key & LETTERS with each other
+    -Looped through all the symbols in the message
+        -If the symbols are in the first key, then translate them to uppercase & get their index
+            -Then search the second key for the index & append that character to the translated message
+        -If not, then just append the current symbol to the translated message
+    -Returned translated message to caller
+    -Removed TODO flag

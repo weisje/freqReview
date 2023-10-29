@@ -52,7 +52,6 @@ def decryptMessage(key, message) -> str:
     return translateMessage(key, message, 'decrypt')
 
 
-# TODO
 def translateMessage(key, message, mode) -> str:
     """
     Engine that runs the appropriate mode of the simple sub cipher on the provided message with the defined key.
@@ -64,10 +63,25 @@ def translateMessage(key, message, mode) -> str:
     :type mode: str
     :return: str
     """
-    pass
+    translated = ""
+    charsA = LETTERS
+    charsB = key
+    if mode == 'decrypt':
+        charsA, charsB = charsB, charsA
+
+    for symbol in message:
+        if symbol.upper() in charsA:
+            symbolIndex = charsA.find(symbol.upper()) # Run cipher on message
+            if symbol.isupper():
+                translated += charsB[symbolIndex].upper()
+            else:
+                translated += charsB[symbolIndex].lower()
+        else:
+            translated += symbol
+
+    return translated
 
 
-# TODO
 def getRandomKey() -> str:
     """
     Takes the available list of characters, mixes them up, & returns the result to the caller.
