@@ -543,3 +543,10 @@
         -If not, then just append the current symbol to the translated message
     -Returned translated message to caller
     -Removed TODO flag
+-Working with main() function:
+    -Took in message, key, & mode variables
+    -Checked to see if the key is valid
+    -Ran cipher on message based on key
+    -Printed ciphered message & copied it to the clipboard
+    -Removed TODO flag
+-Tested program with message & key from book.  Confirmed that both encrypt & decrypt ran as anticipated.
