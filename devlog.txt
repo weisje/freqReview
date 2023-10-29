@@ -550,3 +550,4 @@
     -Printed ciphered message & copied it to the clipboard
     -Removed TODO flag
 -Tested program with message & key from book.  Confirmed that both encrypt & decrypt ran as anticipated.
+-Merged SimpleSubCipher branch with main branch
