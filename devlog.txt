@@ -551,3 +551,10 @@
     -Removed TODO flag
 -Tested program with message & key from book.  Confirmed that both encrypt & decrypt ran as anticipated.
 -Merged SimpleSubCipher branch with main branch
+
+30 October 2023
+-Generated SimpleSubCipherFunction branch off of main branch
+-Created the following functions:
+    -simpleSubCipher(), subKeyIsValid(), subEncryptMessage(), subDecryptMessage(), subTranslateMessage(), subGetRandomKey()
+    -Added TODO flags
+    -Added initialization comments for the functions

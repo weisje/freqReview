@@ -8,6 +8,94 @@ import sys
 import time
 
 
+# TODO
+def simpleSubCipher(message, key, mode, CHARACTERS=string.ascii_uppercase) -> None:
+    """
+    Cipher that replaces letters in a message with ones from a key based on their position in relation to a number of available characters
+    :param message: Message to have a cipher ran on it
+    :type message: str
+    :param key: Order in which the characters have been placed for this instance of the cipher
+    :type key: str
+    :param mode: Switch to tell the function to encrypt or decrypt the provided information
+    :type mode: str
+    :param CHARACTERS: All the available characters for running the simple substitution cipher
+    :type CHARACTERS: str
+    :return: None
+    """
+    pass
+
+
+# TODO
+def subKeyIsValid(key, CHARACTERS) -> bool:
+    """
+    Checks to make sure all the characters from the key & CHARACTERS value match each other
+    :param key: Value that will be matched up with CHARACTERS
+    :type key: str
+    :param CHARACTERS: Value that will be matched up with the key
+    :type CHARACTERS: str
+    :return: bool
+    """
+    pass
+
+
+# TODO
+def subEncryptMessage(key, message, CHARACTERS) -> str:
+    """
+    Basic controller for helping handle translateMessage() function when the mode is set to 'encrypt'.
+    :param key: Order in which the characters have been placed for this instance of the cipher
+    :type key: str
+    :param message: Message to have a cipher ran on it
+    :type message: str
+    :param CHARACTERS: All the available characters for running the simple substitution cipher
+    :type CHARACTERS: str
+    :return: str
+    """
+    pass
+
+
+# TODO
+def subDecryptMessage(key, message, CHARACTERS) -> str:
+    """
+    Basic controller for helping handle translateMessage() function when the mode is set to 'decrypt'.
+    :param key: Order in which the characters have been placed for this instance of the cipher
+    :type key: str
+    :param message: Message to have a cipher ran on it
+    :type message: str
+    :param CHARACTERS: All the available characters for running the simple substitution cipher
+    :type CHARACTERS: str
+    :return: str
+    """
+    pass
+
+
+# TODO
+def subTranslateMessage(key, message, mode, CHARACTERS) -> str:
+    """
+    Engine for running the simpleSubCipher on a provided message
+    :param message: Message to have a cipher ran on it
+    :type message: str
+    :param key: Order in which the characters have been placed for this instance of the cipher
+    :type key: str
+    :param mode: Switch to tell the function to encrypt or decrypt the provided information
+    :type mode: str
+    :param CHARACTERS: All the available characters for running the simple substitution cipher
+    :type CHARACTERS: str
+    :return: str
+    """
+    pass
+
+
+# TODO
+def subGetRandomKey(CHARACTERS=string.ascii_uppercase) -> str:
+    """
+    Generates a random order for provided set of characters
+    :param CHARACTERS: set of characters to get all jumbled up
+    :type CHARACTERS: str
+    :return: str
+    """
+    pass
+
+
 def affineHacker(message, SILENT_MODE=False, SYMBOLS=string.ascii_uppercase + string.ascii_lowercase + "1234567890 !?.") -> None:
     """
     Orchestrates the hacking of messages believed to be encrypted by an Affine Cipher
