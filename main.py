@@ -8,7 +8,6 @@ import sys
 import time
 
 
-# TODO
 def simpleSubCipher(message, key, mode, CHARACTERS=string.ascii_uppercase) -> None:
     """
     Cipher that replaces letters in a message with ones from a key based on their position in relation to a number of available characters

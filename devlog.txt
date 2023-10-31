@@ -602,3 +602,4 @@
     -Lets user know about the message based on the selected key
     -Copies message to clipboard
     -Removed TODO flag
+-Merged SimpleSubCipherFunction branch with main branch
