@@ -592,3 +592,13 @@
     -Tested this with a raw string.ascii_uppercase set as the key
     -Tested with a randomly generated key from subGetRandomKey() function
     -Removed TODO flag
+-Working with simpleSubCipher() function
+    -Took in variables for message, key, mode, & available characters
+    -Converted mode to lowercase
+    -Checked keys with subIsKeyValid() function
+        -Will exit program on invalid set
+    -Runs either subEncryptMessage() or subDecryptMessage() based on value set for the mode
+        -If neither encrypt or decrypt are selected it will exit out with a message to select a proper mode
+    -Lets user know about the message based on the selected key
+    -Copies message to clipboard
+    -Removed TODO flag

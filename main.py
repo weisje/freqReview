@@ -22,7 +22,26 @@ def simpleSubCipher(message, key, mode, CHARACTERS=string.ascii_uppercase) -> No
     :type CHARACTERS: str
     :return: None
     """
-    pass
+    myMessage = message
+    myKey = key
+    myMode = mode.lower()
+    myCharacters = CHARACTERS
+
+    if not subKeyIsValid(myKey, myCharacters):
+        sys.exit("There is an error with the key or value set.")
+
+    if myMode == 'encrypt':
+        translated = subEncryptMessage(myKey, myMessage, myCharacters)
+    elif myMode == 'decrypt':
+        translated = subDecryptMessage(myKey, myMessage, myCharacters)
+    else:
+        sys.exit(f"\'{mode}\' is not a valid mode for the cipher. Select either \'encrypt\' or \'decrypt\' instead.")
+
+    print(f"Using key {myKey}")
+    print(f"{myMode.title()}ed message is:")
+    print(translated)
+    pyperclip.copy(translated)
+    print(f"\nCopied {myMode}ed message to clipboard")
 
 
 def subKeyIsValid(key, CHARACTERS) -> bool:
