@@ -88,7 +88,6 @@ def subTranslateMessage(key, message, mode, CHARACTERS) -> str:
     pass
 
 
-# TODO
 def subGetRandomKey(CHARACTERS=string.ascii_uppercase) -> str:
     """
     Generates a random order for provided set of characters
@@ -96,7 +95,11 @@ def subGetRandomKey(CHARACTERS=string.ascii_uppercase) -> str:
     :type CHARACTERS: str
     :return: str
     """
-    pass
+    availableCharacters = list(CHARACTERS)
+    random.shuffle(availableCharacters)
+    randomKey = ''.join(availableCharacters)
+
+    return randomKey
 
 
 def affineHacker(message, SILENT_MODE=False, SYMBOLS=string.ascii_uppercase + string.ascii_lowercase + "1234567890 !?.") -> None:

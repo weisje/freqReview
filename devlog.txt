@@ -568,3 +568,14 @@
     -Tested function to make sure it is returning the correct value
         -There was an issue with sorting the values on the same line they were being converted to a list.  This caused the lists to become empty & always returned a True value.  Moved the sorts to a new line & the lists began populating as expected.
     -Removed TODO flag
+
+-Working with subGetRandomKey() function:
+    -Took in the provided value of Characters, converted it to a list, then shuffled that list.  Rejoining the results into a string & returning that to the caller
+    -Tested function:
+        -Did three tries off of the default value (string.ascii_uppercase) & confirmed characters were both present & in different places
+        -Did three tries off of 'ABC' & confirmed characterse were present & had been moved around a bit
+            -There was one of these instances that returned 'ABC' which is to be expected of such a small provided value pool
+        -Tried running a standard int of 123
+            -Function warned right away that the expected value is a str, not int
+            -Returned value "TypeError: 'int' object is not iterable"
+    -Removed TODO flag
