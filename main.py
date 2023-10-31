@@ -69,7 +69,6 @@ def subDecryptMessage(key, message, CHARACTERS) -> str:
     return subTranslateMessage(key, message, 'decrypt', CHARACTERS)
 
 
-# TODO
 def subTranslateMessage(key, message, mode, CHARACTERS) -> str:
     """
     Engine for running the simpleSubCipher on a provided message
@@ -83,7 +82,23 @@ def subTranslateMessage(key, message, mode, CHARACTERS) -> str:
     :type CHARACTERS: str
     :return: str
     """
-    pass
+    charsA = CHARACTERS
+    charsB = key
+    translated = ""
+    if mode == 'decrypt':
+        charA, charsB = charsB, charsA
+
+    for character in message:
+        if character.upper() in charsA:
+            characterIndex = charsA.find(character.upper())
+            if character.isupper():
+                translated += charsB[characterIndex].upper()
+            else:
+                translated += charsB[characterIndex].lower()
+        else:
+            translated += character
+
+    return translated
 
 
 def subGetRandomKey(CHARACTERS=string.ascii_uppercase) -> str:
@@ -744,6 +759,7 @@ def main():
     myMode = "BadMode"
     affineHacker(myMessage)
     """
+    print(subTranslateMessage(subGetRandomKey(), "Test Message", "encrypt", CHARACTERS=string.ascii_uppercase))
 
 
 if __name__ == '__main__':
