@@ -41,7 +41,6 @@ def subKeyIsValid(key, CHARACTERS) -> bool:
     return keyCheck == characterCheck
 
 
-# TODO
 def subEncryptMessage(key, message, CHARACTERS) -> str:
     """
     Basic controller for helping handle translateMessage() function when the mode is set to 'encrypt'.
@@ -53,10 +52,9 @@ def subEncryptMessage(key, message, CHARACTERS) -> str:
     :type CHARACTERS: str
     :return: str
     """
-    pass
+    return subTranslateMessage(key, message, 'encrypt', CHARACTERS)
 
 
-# TODO
 def subDecryptMessage(key, message, CHARACTERS) -> str:
     """
     Basic controller for helping handle translateMessage() function when the mode is set to 'decrypt'.
@@ -68,7 +66,7 @@ def subDecryptMessage(key, message, CHARACTERS) -> str:
     :type CHARACTERS: str
     :return: str
     """
-    pass
+    return subTranslateMessage(key, message, 'decrypt', CHARACTERS)
 
 
 # TODO

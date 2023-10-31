@@ -579,3 +579,7 @@
             -Function warned right away that the expected value is a str, not int
             -Returned value "TypeError: 'int' object is not iterable"
     -Removed TODO flag
+
+-Working with subEncryptMessage() & subDecryptMessage() functions:
+    -returned call of subTranslateMessage() function with appropriate mode setting for the function.
+    -Removed TODO flag
