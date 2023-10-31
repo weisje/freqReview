@@ -25,7 +25,6 @@ def simpleSubCipher(message, key, mode, CHARACTERS=string.ascii_uppercase) -> No
     pass
 
 
-# TODO
 def subKeyIsValid(key, CHARACTERS) -> bool:
     """
     Checks to make sure all the characters from the key & CHARACTERS value match each other
@@ -35,7 +34,11 @@ def subKeyIsValid(key, CHARACTERS) -> bool:
     :type CHARACTERS: str
     :return: bool
     """
-    pass
+    keyCheck = list(key)
+    characterCheck = list(CHARACTERS)
+    keyCheck.sort()
+    characterCheck.sort()
+    return keyCheck == characterCheck
 
 
 # TODO
@@ -734,10 +737,12 @@ def sarcasmCipher(sourceText):
 
 
 def main():
-    myMessage = """"5QG9ol3La6QI93!xQxaia6faQL9QdaQG1!!axQARLa!!AuaRLQADQALQG93!xQxaGaAfaQ1QX3o1RQARL9Qda!AafARuQLX1LQALQI1iQX3o1RN"Q-5!1RQP36ARu"""
+    """
+    myMessage = "5QG9ol3La6QI93!xQxaia6faQL9QdaQG1!!axQARLa!!AuaRLQADQALQG93!xQxaGaAfaQ1QX3o1RQARL9Qda!AafARuQLX1LQALQI1iQX3o1RN"Q-5!1RQP36ARu"
     myKey = 15
     myMode = "BadMode"
     affineHacker(myMessage)
+    """
 
 
 if __name__ == '__main__':

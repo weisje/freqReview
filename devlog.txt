@@ -558,3 +558,13 @@
     -simpleSubCipher(), subKeyIsValid(), subEncryptMessage(), subDecryptMessage(), subTranslateMessage(), subGetRandomKey()
     -Added TODO flags
     -Added initialization comments for the functions
+
+31 October 2023
+-Working with subKeyIsValid() function:
+    -Took in key & CHARACTERS
+    -Converted key & CHARACTERS into lists
+    -Sorted two lists alphabetically
+    -Returned True or false on if they contain the same characters
+    -Tested function to make sure it is returning the correct value
+        -There was an issue with sorting the values on the same line they were being converted to a list.  This caused the lists to become empty & always returned a True value.  Moved the sorts to a new line & the lists began populating as expected.
+    -Removed TODO flag
