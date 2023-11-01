@@ -609,3 +609,4 @@
 -Created Exercises > simpleSubHacker.py file
 -Added & ran Exercises > Resources > makeWordPatterns.py
 -Took result file(wordPatterns.py) & added it to the Exercises file
+-Added imports & included the base frame for main() function

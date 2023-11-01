@@ -27,7 +27,7 @@ def getWordPattern(word):
 def main():
     allPatterns = {}
 
-    fo = open('dictionary.txt')
+    fo = open('Resources\\dictionary.txt')
     wordList = fo.read().split('\n')
     fo.close()
 
@@ -42,7 +42,7 @@ def main():
 
     # This is code that writes code. The wordPatterns.py file contains
     # one very, very large assignment statement:
-    fo = open('../wordPatterns.py', 'w')
+    fo = open('wordPatterns.py', 'w')
     fo.write('allPatterns = ')
     fo.write(pprint.pformat(allPatterns))
     fo.close()

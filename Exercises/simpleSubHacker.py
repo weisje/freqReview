@@ -2,6 +2,7 @@
 # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
 import copy
+import makeWordPatterns
 import os
 import pyperclip
 import simpleSubCipher
