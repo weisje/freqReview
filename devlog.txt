@@ -610,3 +610,9 @@
 -Added & ran Exercises > Resources > makeWordPatterns.py
 -Took result file(wordPatterns.py) & added it to the Exercises file
 -Added imports & included the base frame for main() function
+
+2 November 2023
+-Added framing for functions:
+    -getBlankCipherletterMapping(), addLettersToMapping(), intersectMapping(), removeSolvedLettersFromMapping(), hackSimpleSub(), decryptWithCipherletterMapping()
+-Added initial comments for:
+    -getBlankCipherletterMapping(), addLettersToMapping(), intersectMapping()
