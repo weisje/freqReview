@@ -51,19 +51,38 @@ def intersectMapping(mapA, mapB) -> dict:
 
 
 # TODO
-def removeSolvedLettersFromMapping():
+def removeSolvedLettersFromMapping(letterMapping) -> dict:
+    """
+    Cipher letters in the mapping that map to only one letter are "solved" & can be removed from the other letters.
+    :param letterMapping: Current full letter mapping of the potentials for the letters
+    :type letterMapping: dict
+    :return: dict
+    """
     pass
 
 
 # TODO
-def hackSimpleSub():
+def hackSimpleSub(message) -> dict:
+    """
+    Engine to run the simple substitution hacker functions
+    :param message: Message to be interrogated & decrypted
+    :type message: str
+    :return: dict
+    """
     pass
 
 
 # TODO
-def decryptWithCipherletterMapping():
+def decryptWithCipherletterMapping(cipherText, letterMapping) -> str:
+    """
+    Takes the string of the cipher text decrypted with the letter mapping & replaces any ambiguous characters with an underscore
+    :param cipherText: Message that was to be decrypted
+    :type cipherText: str
+    :param letterMapping: Letter mapping after character/frequency analysis
+    :type letterMapping: dict
+    :return: str
+    """
     pass
-
 
 if __name__ == '__main__':
     main()

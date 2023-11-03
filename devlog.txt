@@ -616,3 +616,7 @@
     -getBlankCipherletterMapping(), addLettersToMapping(), intersectMapping(), removeSolvedLettersFromMapping(), hackSimpleSub(), decryptWithCipherletterMapping()
 -Added initial comments for:
     -getBlankCipherletterMapping(), addLettersToMapping(), intersectMapping()
+
+3 November 2023
+-Added initial comments for:
+    -removeSolvedLettersFromMapping(), hackSimpleSub(), decryptWithCipherletterMapping()
