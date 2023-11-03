@@ -620,3 +620,8 @@
 3 November 2023
 -Added initial comments for:
     -removeSolvedLettersFromMapping(), hackSimpleSub(), decryptWithCipherletterMapping()
+-Worked with main() function
+-Working with getBlankCipherletterMapping() function:
+    -Generated a dictionary with keys matching available characters & empty lists as values
+    -Returned generated dictionary
+    -Removed TODO flag

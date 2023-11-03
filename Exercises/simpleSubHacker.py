@@ -5,21 +5,42 @@ import copy
 import makeWordPatterns
 import os
 import pyperclip
+import re
 import simpleSubCipher
+import string
 import wordPatterns
+
+LETTERS = string.ascii_uppercase
+nonLettersOrSpacePattern = re.compile("[^A-Z\s]")
 
 
 def main():
-    pass
+    message = ""
+
+    # Determine the possible valid ciphertext translations
+    print("Hacking...")
+    letterMapping = hackSimpleSub(message)
+
+    # Display results to user
+    print("Mapping:")
+    print(letterMapping)
+    print("\nOriginal ciphertext: ")
+    print(message)
+    print("\nCopying hacked message to clipboard:")
+    hackedMessage = decryptWithCipherletterMapping(message, letterMapping)
+    pyperclip.copy(hackedMessage)
+    print(hackedMessage)
 
 
-# TODO
 def getBlankCipherletterMapping() -> dict:
     """
     Returns a dictionary that is a blank cipher letter mapping
     :return: dict
     """
-    pass
+    returnDict = {}
+    for letter in LETTERS:
+        returnDict[letter] = []
+    return returnDict
 
 
 # TODO
@@ -83,6 +104,7 @@ def decryptWithCipherletterMapping(cipherText, letterMapping) -> str:
     :return: str
     """
     pass
+
 
 if __name__ == '__main__':
     main()
