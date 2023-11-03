@@ -43,10 +43,9 @@ def getBlankCipherletterMapping() -> dict:
     return returnDict
 
 
-# TODO
 def addLettersToMapping(letterMapping, cipherword, candidate) -> None:
     """
-    Adds the letters in the candidate as potential decryption letters for the cipherletters in the cipherletters mapping.
+    Adds the letters in the candidate as potential decryption letters for the cipher-letters in the cipher-letters mapping.
     :param letterMapping: Takes a dictionary value that stores a cipherletter mapping, which is copied by the function
     :type letterMapping: dict
     :param cipherword: String value of the ciphertext word
@@ -55,7 +54,10 @@ def addLettersToMapping(letterMapping, cipherword, candidate) -> None:
     :type candidate: str
     :return: None
     """
-    pass
+
+    for i in range(len(cipherword)): # Count through to the end of the cipherword
+        if candidate[i] not in letterMapping[cipherword[i]]: # Check to see if possible character already listed in letterMapping for it
+            letterMapping[cipherword[i]].append(candidate[i]) # If it is not, then append that as a potential character in the letter mapping
 
 
 # TODO

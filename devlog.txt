@@ -625,3 +625,8 @@
     -Generated a dictionary with keys matching available characters & empty lists as values
     -Returned generated dictionary
     -Removed TODO flag
+-Working with addLettersToMapping() function:
+    -Count through the length of the cipher word
+    -Check to see if a potential letter is listed as a viable option for the character in question
+    -If it is not listed, then add it to the letter mapping
+    -Removed TODO flag
