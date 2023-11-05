@@ -630,3 +630,6 @@
     -Check to see if a potential letter is listed as a viable option for the character in question
     -If it is not listed, then add it to the letter mapping
     -Removed TODO flag
+
+4 November 2023
+-Reviewed Invalid escape warning

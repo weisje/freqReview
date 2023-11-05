@@ -11,7 +11,7 @@ import string
 import wordPatterns
 
 LETTERS = string.ascii_uppercase
-nonLettersOrSpacePattern = re.compile("[^A-Z\s]")
+nonLettersOrSpacePattern = re.compile('[^A-Z\s]')
 
 
 def main():
@@ -55,9 +55,11 @@ def addLettersToMapping(letterMapping, cipherword, candidate) -> None:
     :return: None
     """
 
-    for i in range(len(cipherword)): # Count through to the end of the cipherword
-        if candidate[i] not in letterMapping[cipherword[i]]: # Check to see if possible character already listed in letterMapping for it
-            letterMapping[cipherword[i]].append(candidate[i]) # If it is not, then append that as a potential character in the letter mapping
+    for i in range(len(cipherword)):  # Count through to the end of the cipherword
+        if candidate[i] not in letterMapping[
+            cipherword[i]]:  # Check to see if possible character already listed in letterMapping for it
+            letterMapping[cipherword[i]].append(
+                candidate[i])  # If it is not, then append that as a potential character in the letter mapping
 
 
 # TODO
