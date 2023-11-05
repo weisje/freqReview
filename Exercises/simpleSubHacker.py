@@ -56,13 +56,11 @@ def addLettersToMapping(letterMapping, cipherword, candidate) -> None:
     """
 
     for i in range(len(cipherword)):  # Count through to the end of the cipherword
-        if candidate[i] not in letterMapping[
-            cipherword[i]]:  # Check to see if possible character already listed in letterMapping for it
+        if candidate[i] not in letterMapping[cipherword[i]]:  # Check to see if possible character already listed in letterMapping for it
             letterMapping[cipherword[i]].append(
                 candidate[i])  # If it is not, then append that as a potential character in the letter mapping
 
 
-# TODO
 def intersectMapping(mapA, mapB) -> dict:
     """
     Creates a blank letter map & then adds only the potential decryption characters that exist in both maps
@@ -72,7 +70,19 @@ def intersectMapping(mapA, mapB) -> dict:
     :type mapB: dict
     :return: dict
     """
-    pass
+    intersectedMapping = getBlankCipherletterMapping()
+    for letter in LETTERS:
+        # An empty list just means "any letter is possible." In this case just copy the other map entirely.
+        if not mapA[letter]:
+            intersectedMapping[letter] = copy.deepcopy(mapB[letter])
+        elif not mapB[letter]:
+            intersectedMapping[letter] = copy.deepcopy(mapA[letter])
+        else: # If a letter in mapA[letter] exists in mapB[letter], add that letter to intersectedMapping[letter].
+            for mappedLetter in mapA[letter]:
+                if mappedLetter in mapB[letter]:
+                    intersectedMapping[letter].append(mappedLetter)
+
+    return intersectedMapping
 
 
 # TODO

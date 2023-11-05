@@ -633,3 +633,12 @@
 
 4 November 2023
 -Reviewed Invalid escape warning
+
+5 November 2023
+-Working with intersectMapping() function
+    -Got a blank set of dictionaries
+    -Iterated through each of the available characters
+    -Added the value of each letter if either of the values was empty for the dictionary
+    -Added only the characters available if there were different characters in each
+    -Returned the final dictionary of the values that exist in both mappings
+    -Removed TODO flag
