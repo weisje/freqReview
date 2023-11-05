@@ -85,7 +85,6 @@ def intersectMapping(mapA, mapB) -> dict:
     return intersectedMapping
 
 
-# TODO
 def removeSolvedLettersFromMapping(letterMapping) -> dict:
     """
     Cipher letters in the mapping that map to only one letter are "solved" & can be removed from the other letters.
@@ -93,7 +92,24 @@ def removeSolvedLettersFromMapping(letterMapping) -> dict:
     :type letterMapping: dict
     :return: dict
     """
-    pass
+    loopAgain = True # Value to keep going through if there are still unsolved characters in either map that can be compared & reduced.
+    while loopAgain:
+        loopAgain = False # Resets the trigger to assume that we will not have to loop again
+
+        solvedLetters = [] # List of uppercase letters that have one & only one possible mapping in letterMapping
+        for cipherLetter in LETTERS:
+            if len(letterMapping[cipherLetter]) == 1: # Checking to see if the letter only has one dictionary value & is therefore "solved"
+                solvedLetters.append(letterMapping[cipherLetter][0])
+
+        # If a letter is solved, then it cannot possibly be a potential decryption letter for a different ciphertext letter.  We should remove it from those other lists.
+        for cipherLetter in LETTERS:
+            for solved in solvedLetters:
+                if len(letterMapping[cipherLetter]) != 1 and solved in letterMapping[cipherLetter]: # Check to see if the current value is in the current iteration of cipherLetters as well as if there are other characters.  If so remove the solved character from it
+                    letterMapping[cipherLetter].remove(solved)
+                    if len(letterMapping[cipherLetter]) == 1: # A new character has been solved, so go through the process again
+                        loopAgain = True
+
+    return letterMapping
 
 
 # TODO
