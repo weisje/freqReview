@@ -3,7 +3,6 @@
 
 import copy
 import makeWordPatterns
-import os
 import pyperclip
 import re
 import simpleSubCipher
