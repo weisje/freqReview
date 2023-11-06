@@ -138,7 +138,6 @@ def hackSimpleSub(message) -> dict:
     return removeSolvedLettersFromMapping(intersectedMap)
 
 
-# TODO
 def decryptWithCipherletterMapping(ciphertext, letterMapping) -> str:
     """
     Takes the string of the cipher text decrypted with the letter mapping & replaces any ambiguous characters with an underscore
