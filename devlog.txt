@@ -644,3 +644,8 @@
     -Removed TODO flag
 -Working with removeSolvedLettersFromMapping() function
     -Ran while loop to check for solved characters in the letter mapping.  If the solved character is found in other maps, then it removes the solved character from them.  If that then reduces the letter mapping that the solved character was in to one, then it is assumed that the current character is solved.  It then loops through & removes the newly solved character from all the other letter mappings until there are no more solvable ones.
+
+6 November 2023
+-Working with hackSimpleSub() function
+    -Created engine for calling all other functions & beginning the hacking of the simple substitution cipher.
+    -Removed TODO flag

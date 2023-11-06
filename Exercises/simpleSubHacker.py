@@ -61,7 +61,7 @@ def addLettersToMapping(letterMapping, cipherword, candidate) -> None:
                 candidate[i])  # If it is not, then append that as a potential character in the letter mapping
 
 
-def intersectMapping(mapA, mapB) -> dict:
+def intersectMappings(mapA, mapB) -> dict:
     """
     Creates a blank letter map & then adds only the potential decryption characters that exist in both maps
     :param mapA: First letter mapping sample
@@ -112,7 +112,6 @@ def removeSolvedLettersFromMapping(letterMapping) -> dict:
     return letterMapping
 
 
-# TODO
 def hackSimpleSub(message) -> dict:
     """
     Engine to run the simple substitution hacker functions
@@ -120,7 +119,23 @@ def hackSimpleSub(message) -> dict:
     :type message: str
     :return: dict
     """
-    pass
+    intersectedMap = getBlankCipherletterMapping()
+    cipherwordList = nonLettersOrSpacePattern.sub('', message.upper()).split()
+    for cipherword in cipherwordList:
+        candidateMap = getBlankCipherletterMapping() # Get a new cipherletter mapping for each ciphertext word
+        wordPattern = makeWordPatterns.getWordPattern(cipherword)
+        if wordPattern not in wordPatterns.allPatterns:
+            continue # This word was not in our dictionary, so continue
+
+        # Add the letters of each candidate to the mapping
+        for candidate in wordPatterns.allPatterns[wordPattern]:
+            addLettersToMapping(candidateMap, cipherword, candidate)
+
+        # Intersect the new mapping with the existing intersected mapping
+        intersectedMap = intersectMappings(intersectedMap, candidateMap)
+
+    # Remove any solved letters from the other lists:
+    return removeSolvedLettersFromMapping(intersectedMap)
 
 
 # TODO
