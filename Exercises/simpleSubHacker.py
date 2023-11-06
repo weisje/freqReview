@@ -139,16 +139,31 @@ def hackSimpleSub(message) -> dict:
 
 
 # TODO
-def decryptWithCipherletterMapping(cipherText, letterMapping) -> str:
+def decryptWithCipherletterMapping(ciphertext, letterMapping) -> str:
     """
     Takes the string of the cipher text decrypted with the letter mapping & replaces any ambiguous characters with an underscore
-    :param cipherText: Message that was to be decrypted
-    :type cipherText: str
+    :param ciphertext: Message that was to be decrypted
+    :type ciphertext: str
     :param letterMapping: Letter mapping after character/frequency analysis
     :type letterMapping: dict
     :return: str
     """
-    pass
+
+    # First create a simple sub key from the letterMapping mapping
+    key = ['x'] * len(LETTERS)
+    for cipherletter in LETTERS:
+        if len(letterMapping[cipherletter]) == 1:
+            # If there's only one letter, add it to the key
+            keyIndex = LETTERS.find(letterMapping[cipherletter][0])
+            key[keyIndex] = cipherletter
+        else:
+            ciphertext = ciphertext.replace(cipherletter.lower(), '_')
+            ciphertext = ciphertext.replace(cipherletter.upper(), '_')
+
+    key = ''.join(key)
+
+    # With the key we've created, decrypt the ciphertext
+    return simpleSubCipher.decryptMessage(key, ciphertext)
 
 
 if __name__ == '__main__':
