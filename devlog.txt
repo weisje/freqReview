@@ -650,3 +650,4 @@
     -Created engine for calling all other functions & beginning the hacking of the simple substitution cipher.
     -Removed TODO flag
 -Working with decryptWithCipherletterMapping() function
+-Merged SimpleSubHacker branch with main branch
